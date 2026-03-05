@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('excellus-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      var lang = localStorage.getItem('excellus-lang') || 'en';
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    })();
+  </script>
+  <meta name="description" content="Conheça a Excellus Remodeling - Nossa história, equipe, valores e certificações. Building excellence from the ground up.">
+  <title>About Us | Excellus Group</title>
+  <link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pillars.css">
+  <link rel="stylesheet" href="css/patterns.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <style>
+    .about-page { padding: var(--space-24) 0; }
+    .about-page__back {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      color: var(--color-gold); margin-bottom: var(--space-8);
+      text-decoration: none; font-size: var(--text-sm);
+    }
+    .about-page__back:hover { color: var(--color-gold-light); }
+    .about-page__title {
+      font-size: var(--text-3xl); font-weight: 700; text-align: center;
+      margin-bottom: var(--space-4);
+      background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-section { margin-bottom: var(--space-20); }
+    .about-section__title {
+      font-size: var(--text-2xl); color: var(--color-gold);
+      margin-bottom: var(--space-6); text-align: center;
+    }
+    .about-section__content {
+      max-width: 720px; margin: 0 auto;
+      color: var(--color-text-secondary); line-height: 1.7;
+    }
+    .about-team {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-8); justify-items: center; margin-top: var(--space-8);
+    }
+    .about-team__card {
+      text-align: center;
+    }
+    .about-team__photo {
+      width: 140px; height: 140px; border-radius: 50%;
+      object-fit: cover; border: 3px solid var(--color-gold-subtle);
+      margin-bottom: var(--space-4);
+    }
+    .about-team__name { font-weight: 600; color: var(--color-text-primary); margin-bottom: var(--space-1); }
+    .about-team__role { font-size: var(--text-sm); color: var(--color-gold); }
+    .about-values {
+      display: flex; flex-direction: row; flex-wrap: nowrap; gap: var(--space-6); margin-top: var(--space-8);
+      justify-content: center;
+    }
+    .about-values__tagline {
+      text-align: center; color: var(--color-gold); font-size: var(--text-lg); font-weight: 600;
+      margin-bottom: var(--space-4); letter-spacing: 0.05em;
+    }
+    .about-values__item {
+      flex: 1 1 0; min-width: 0;
+      background: var(--color-bg-secondary);
+      padding: var(--space-6); border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gold-subtle);
+      text-align: center;
+    }
+    .about-values__intro { margin-bottom: var(--space-8); }
+    .about-values__title { color: var(--color-gold); font-weight: 600; margin-bottom: var(--space-2); }
+    .about-values__text { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .about-values__text strong, .about-section__content strong { color: var(--color-gold); font-weight: 600; }
+    .about-certs {
+      display: flex; flex-wrap: wrap; gap: var(--space-6);
+      justify-content: center; margin-top: var(--space-8);
+    }
+    .about-certs__badge {
+      background: var(--color-bg-secondary);
+      padding: var(--space-6) var(--space-8);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gold-subtle);
+      text-align: center; min-width: 160px;
+    }
+    .about-certs__badge strong { color: var(--color-gold); display: block; margin-bottom: var(--space-2); }
+    .about-certs__badge span { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .about-founder {
+      display: grid; grid-template-columns: 1fr 1.2fr 1fr;
+      gap: var(--space-16); align-items: start;
+      margin-bottom: var(--space-20); min-height: 500px;
+      width: 100vw; position: relative; left: 50%;
+      margin-left: -50vw;       padding-left: 0.5rem; padding-right: 0.5rem;
+    }
+    .about-founder__img-left {
+      position: relative; align-self: start; justify-self: start;
+      margin-left: 0;
+    }
+    .about-founder__img-left img {
+      width: 100%; max-width: 280px; height: auto;
+      filter: grayscale(100%); border-radius: var(--radius-lg);
+    }
+    .about-founder__img-right {
+      position: relative; align-self: end; justify-self: end;
+    }
+    .about-founder__img-right img {
+      width: 100%; max-width: 320px; height: auto;
+      border-radius: var(--radius-lg);
+    }
+    .about-founder__center {
+      display: flex; flex-direction: column; gap: var(--space-16);
+      color: var(--color-text-secondary); line-height: 2.4;
+      max-width: 500px;
+    }
+    .about-founder__img1 strong,
+    .about-founder__img2 strong,
+    .about-founder__post strong { color: var(--color-gold); font-weight: 600; }
+    .about-founder__img1 { font-size: var(--text-lg); }
+    .about-founder__img1 p { margin-bottom: var(--space-8); }
+    .about-founder__img1 p:last-child { margin-bottom: 0; }
+    .about-founder__img2 h3 { font-size: var(--text-xl); color: var(--color-gold); margin-bottom: var(--space-6); }
+    .about-founder__img2 p { margin-bottom: var(--space-8); }
+    .about-founder__img2 p:last-child { margin-bottom: 0; }
+    .about-founder__post { font-size: var(--text-base); }
+    .about-founder__post p { margin-bottom: var(--space-8); }
+    .about-founder__post p:last-child { margin-bottom: 0; }
+    .about-founder__post .about-founder__highlight { font-weight: 600; color: var(--color-text-primary); }
+    @media (max-width: 1024px) {
+      .about-values {
+        flex-wrap: nowrap; overflow-x: auto; padding-bottom: var(--space-4);
+        -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;
+      }
+      .about-values__item { flex: 0 0 280px; scroll-snap-align: start; }
+    }
+    @media (max-width: 1024px) {
+      .about-founder {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-left: var(--container-padding); padding-right: var(--container-padding);
+      }
+      .about-founder__img-left, .about-founder__img-right { justify-self: center; }
+      .about-founder__img-left img { max-width: 220px; }
+      .about-founder__img-right img { max-width: 260px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-dark.png" alt="Excellus Group" class="logo__img logo__img--dark">
+        <img src="assets/logo-light.png" alt="Excellus Group" class="logo__img logo__img--light">
+      </a>
+      <div class="header__menu">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="index.html#home" class="nav__link" data-i18n="nav.home">Home</a></li>
+            <li><a href="index.html#services" class="nav__link" data-i18n="nav.services">Services</a></li>
+            <li><a href="index.html#process" class="nav__link" data-i18n="nav.process">Our Process</a></li>
+            <li><a href="index.html#testimonials" class="nav__link" data-i18n="nav.testimonials">Testimonials</a></li>
+            <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" type="button" data-i18n-attr="aria-label" data-i18n-attr-key="themeToggle.aria">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+          </button>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="pt" aria-label="Português">
+              <img src="https://flagcdn.com/w40/br.png" alt="" width="24" height="18" loading="lazy">
+            </button>
+            <span class="lang-divider" aria-hidden="true"></span>
+            <button class="lang-btn active" data-lang="en" aria-label="English">
+              <img src="https://flagcdn.com/w40/us.png" alt="" width="24" height="18" loading="lazy">
+            </button>
+          </div>
+          <a href="form.html" class="btn btn--primary" data-i18n="cta">Schedule Consultation</a>
+        </div>
+      </div>
+      <button class="nav-toggle" data-i18n-attr="aria-label" data-i18n-attr-key="navToggle.aria">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="about-page fleur-pattern">
+    <div class="container">
+      <a href="index.html" class="about-page__back" data-i18n="about.back">← Back to home</a>
+      <h1 class="about-page__title" data-i18n="about.title">About Excellus Remodeling</h1>
+
+      <!-- Nossos Valores -->
+      <section class="about-section">
+        <div class="about-section__content about-values__intro" data-i18n-html="about.valuesIntro" style="margin-bottom: var(--space-8);"></div>
+        <h2 class="about-section__title" data-i18n="about.valuesTitle">Our Values</h2>
+        <p class="about-values__tagline" data-i18n="about.valuesTagline">Valor • Confiança • Excelência</p>
+        <div class="about-values">
+          <div class="about-values__item">
+            <h3 class="about-values__title" data-i18n="about.value1Title">Craftsmanship</h3>
+            <p class="about-values__text" data-i18n-html="about.value1Text">We believe that exceptional spaces are built through skill, precision, and attention to detail. Every project we take on reflects our commitment to delivering refined workmanship and lasting quality.</p>
+          </div>
+          <div class="about-values__item">
+            <h3 class="about-values__title" data-i18n="about.value2Title">Integrity</h3>
+            <p class="about-values__text" data-i18n-html="about.value2Text">Trust is the foundation of every successful project. We value honesty, transparency, and clear communication with our clients from the first consultation to the final walkthrough.</p>
+          </div>
+          <div class="about-values__item">
+            <h3 class="about-values__title" data-i18n="about.value3Title">Attention to Detail</h3>
+            <p class="about-values__text" data-i18n-html="about.value3Text">Luxury is defined by the details. From materials to finishes, we approach every aspect of the renovation process with care to create spaces that are both elegant and functional.</p>
+          </div>
+          <div class="about-values__item">
+            <h3 class="about-values__title" data-i18n="about.value4Title">Client Experience</h3>
+            <p class="about-values__text" data-i18n-html="about.value4Text">A renovation should elevate your home without bringing unnecessary stress. Our team is committed to delivering a smooth, organized, and respectful experience throughout the entire process.</p>
+          </div>
+          <div class="about-values__item">
+            <h3 class="about-values__title" data-i18n="about.value5Title">Long-Term Quality</h3>
+            <p class="about-values__text" data-i18n-html="about.value5Text">We build with durability in mind. Our goal is to create spaces that not only look exceptional today but continue to perform and impress for years to come.</p>
+          </div>
+        </div>
+      </section>
+
+      <div style="text-align: center; margin-top: var(--space-12);">
+        <a href="form.html" class="btn btn--primary" data-i18n="cta">Schedule Consultation</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__columns">
+        <div class="footer__col">
+          <a href="index.html" class="logo footer__logo">
+            <img src="assets/logo-dark.png" alt="Excellus Group" class="logo__img logo__img--dark">
+            <img src="assets/logo-light.png" alt="Excellus Group" class="logo__img logo__img--light">
+          </a>
+          <div class="footer__desc">
+            <p class="footer__brand" data-i18n="footer.brand">Excellus Remodeling</p>
+            <p class="footer__tagline" data-i18n="footer.tagline">Building excellence from the ground up.</p>
+            <p class="footer__services" data-i18n="footer.services">Remodeling • Flooring • Finishing</p>
+          </div>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook" class="footer__social-shield footer__social-link">
+              <img src="assets/social-facebook-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
+              <img src="assets/social-facebook-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/excellusremodeling" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer__social-shield footer__social-link">
+              <img src="assets/social-instagram-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
+              <img src="assets/social-instagram-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
+            </a>
+            <a href="#" aria-label="LinkedIn" class="footer__social-shield footer__social-link">
+              <img src="assets/social-linkedin-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
+              <img src="assets/social-linkedin-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
+            </a>
+            <a href="https://wa.me/14074702989" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer__social-shield footer__social-link footer__whatsapp">
+              <img src="assets/social-whatsapp-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
+              <img src="assets/social-whatsapp-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home" data-i18n="footer.navHome">Home</a></li>
+            <li><a href="index.html#services" data-i18n="footer.navServices">Services</a></li>
+            <li><a href="index.html#process" data-i18n="footer.navProcess">Process</a></li>
+            <li><a href="index.html#gallery" data-i18n="footer.navPortfolio">Portfolio</a></li>
+            <li><a href="about.html" data-i18n="footer.navAbout">About</a></li>
+            <li><a href="form.html" data-i18n="footer.navRequestQuote">Schedule Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footer.contact">Contact</h4>
+          <p><a href="mailto:Remodeling@excellusgroup.com">Remodeling@excellusgroup.com</a></p>
+          <p><a href="tel:+14074702989">+1 (407) 470-2989</a></p>
+          <p>Orlando, FL</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" data-i18n="footer.rights">© 2025 Excellus Group. All rights reserved.</p>
+        <div class="footer__credits">
+          <img src="assets/by-bruna-pazuch.png" alt="by Bruna Pazuch" class="footer__credit-img footer__credit-img--dark">
+          <img src="assets/by-samara-pagnon.png" alt="by Bruna Pazuch" class="footer__credit-img footer__credit-img--light">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+</body>
+</html>

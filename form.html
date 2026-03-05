@@ -11,8 +11,8 @@
       document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
     })();
   </script>
-  <meta name="description" content="Request your free estimate - Excellus Remodeling. Building excellence from the ground up.">
-  <title>Request Estimate | Excellus Group</title>
+  <meta name="description" content="Schedule your consultation - Excellus Remodeling. Luxury home transformations in Orlando.">
+  <title>Schedule Consultation | Excellus Group</title>
   <link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
   <link rel="stylesheet" href="css/variables.css">
@@ -142,14 +142,15 @@
       <div class="header__menu">
         <nav class="nav">
           <ul class="nav__list">
-            <li><a href="index.html#home" class="nav__link">Home</a></li>
-            <li><a href="index.html#services" class="nav__link">Services</a></li>
-            <li><a href="index.html#process" class="nav__link">Our Process</a></li>
-            <li><a href="index.html#testimonials" class="nav__link">Testimonials</a></li>
+            <li><a href="index.html#home" class="nav__link" data-i18n="nav.home">Home</a></li>
+            <li><a href="index.html#services" class="nav__link" data-i18n="nav.services">Services</a></li>
+            <li><a href="index.html#process" class="nav__link" data-i18n="nav.process">Our Process</a></li>
+            <li><a href="index.html#testimonials" class="nav__link" data-i18n="nav.testimonials">Testimonials</a></li>
+            <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
           </ul>
         </nav>
         <div class="header__actions">
-          <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <button class="theme-toggle" type="button" data-i18n-attr="aria-label" data-i18n-attr-key="themeToggle.aria">
             <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
             <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
           </button>
@@ -162,10 +163,10 @@
               <img src="https://flagcdn.com/w40/us.png" alt="" width="24" height="18" loading="lazy">
             </button>
           </div>
-          <a href="form.html" class="btn btn--primary">Get a Free Estimate</a>
+          <a href="form.html" class="btn btn--primary" data-i18n="cta">Schedule Consultation</a>
         </div>
       </div>
-      <button class="nav-toggle" aria-label="Open menu">
+      <button class="nav-toggle" data-i18n-attr="aria-label" data-i18n-attr-key="navToggle.aria">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -173,40 +174,40 @@
 
   <main class="form-page fleur-pattern">
     <div class="container form-page__inner">
-      <a href="index.html" class="form-page__back">← Back to home</a>
-      <h1 class="form-page__title">Request Your Estimate</h1>
-      <p class="form-page__subtitle">Fill out the form and we will get back to you shortly.</p>
+      <a href="index.html" class="form-page__back" data-i18n="form.back">← Back to home</a>
+      <h1 class="form-page__title" data-i18n="form.title">Schedule Consultation</h1>
+      <p class="form-page__subtitle" data-i18n="form.subtitle">Fill out the form and we will get back to you shortly.</p>
 
       <!-- Configure: Replace YOUR_FORM_ID with your Formspree form ID from formspree.io -->
       <form class="form-page__form" id="estimate-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="hidden" name="_subject" value="New estimate request - Excellus">
         <input type="hidden" name="_language" value="en">
 
-        <label for="form-name">Full name</label>
-        <input type="text" id="form-name" name="name" required placeholder="Full name">
+        <label for="form-name" data-i18n="form.name">Full name</label>
+        <input type="text" id="form-name" name="name" required data-i18n-placeholder="form.name" placeholder="Full name">
 
-        <label for="form-email">Email</label>
-        <input type="email" id="form-email" name="email" required placeholder="Email">
+        <label for="form-email" data-i18n="form.email">Email</label>
+        <input type="email" id="form-email" name="email" required data-i18n-placeholder="form.email" placeholder="Email">
 
-        <label for="form-phone">Phone</label>
-        <input type="tel" id="form-phone" name="phone" placeholder="Phone">
+        <label for="form-phone" data-i18n="form.phone">Phone</label>
+        <input type="tel" id="form-phone" name="phone" data-i18n-placeholder="form.phone" placeholder="Phone">
 
-        <label for="form-type">Project type</label>
+        <label for="form-type" data-i18n="form.projectType">Project type</label>
         <select id="form-type" name="project_type">
-          <option value="">Project type</option>
-          <option value="residential">Residential</option>
-          <option value="commercial">Commercial</option>
-          <option value="interior">Interiors</option>
-          <option value="exterior">Exteriors</option>
-          <option value="other">Other</option>
+          <option value="" data-i18n="form.projectType">Project type</option>
+          <option value="residential" data-i18n="form.projectResidential">Residential</option>
+          <option value="commercial" data-i18n="form.projectCommercial">Commercial</option>
+          <option value="interior" data-i18n="form.projectInterior">Interiors</option>
+          <option value="exterior" data-i18n="form.projectExterior">Exteriors</option>
+          <option value="other" data-i18n="form.projectOther">Other</option>
         </select>
 
-        <label for="form-message">Describe your project</label>
-        <textarea id="form-message" name="message" required placeholder="Describe your project"></textarea>
+        <label for="form-message" data-i18n="form.message">Describe your project</label>
+        <textarea id="form-message" name="message" required data-i18n-placeholder="form.message" placeholder="Describe your project"></textarea>
 
-        <button type="submit" class="btn btn--primary" id="form-submit">Submit request</button>
+        <button type="submit" class="btn btn--primary" id="form-submit" data-i18n="form.submit">Submit request</button>
 
-        <div class="form-page__message" id="form-message"></div>
+        <div class="form-page__message" id="form-feedback"></div>
       </form>
     </div>
   </main>
@@ -220,9 +221,9 @@
             <img src="assets/logo-light.png" alt="Excellus Group" class="logo__img logo__img--light">
           </a>
           <div class="footer__desc">
-            <p class="footer__brand">Excellus Remodeling</p>
-            <p class="footer__tagline">Building excellence from the ground up.</p>
-            <p class="footer__services">Remodeling • Flooring • Finishing</p>
+            <p class="footer__brand" data-i18n="footer.brand">Excellus Remodeling</p>
+            <p class="footer__tagline" data-i18n="footer.tagline">Building excellence from the ground up.</p>
+            <p class="footer__services" data-i18n="footer.services">Remodeling • Flooring • Finishing</p>
           </div>
           <div class="footer__social">
             <a href="#" aria-label="Facebook" class="footer__social-shield footer__social-link">
@@ -237,31 +238,36 @@
               <img src="assets/social-linkedin-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
               <img src="assets/social-linkedin-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
             </a>
-            <a href="https://wa.me/14074702989" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer__social-shield footer__social-link">
+            <a href="https://wa.me/14074702989" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer__social-shield footer__social-link footer__whatsapp">
               <img src="assets/social-whatsapp-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
               <img src="assets/social-whatsapp-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
             </a>
           </div>
         </div>
         <div class="footer__col">
-          <h4>Quick Links</h4>
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
           <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#process">Process</a></li>
-            <li><a href="index.html#gallery">Portfolio</a></li>
-            <li><a href="form.html">Request Quote</a></li>
+            <li><a href="index.html#home" data-i18n="footer.navHome">Home</a></li>
+            <li><a href="index.html#services" data-i18n="footer.navServices">Services</a></li>
+            <li><a href="index.html#process" data-i18n="footer.navProcess">Process</a></li>
+            <li><a href="index.html#gallery" data-i18n="footer.navPortfolio">Portfolio</a></li>
+            <li><a href="about.html" data-i18n="footer.navAbout">About</a></li>
+            <li><a href="form.html" data-i18n="footer.navRequestQuote">Schedule Consultation</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer.contact">Contact</h4>
           <p><a href="mailto:Remodeling@excellusgroup.com">Remodeling@excellusgroup.com</a></p>
           <p><a href="tel:+14074702989">+1 (407) 470-2989</a></p>
           <p>Orlando, FL</p>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2025 Excellus Group. All rights reserved.</p>
+        <p class="footer__copyright" data-i18n="footer.rights">© 2025 Excellus Group. All rights reserved.</p>
+        <div class="footer__credits">
+          <img src="assets/by-bruna-pazuch.png" alt="by Bruna Pazuch" class="footer__credit-img footer__credit-img--dark">
+          <img src="assets/by-samara-pagnon.png" alt="by Bruna Pazuch" class="footer__credit-img footer__credit-img--light">
+        </div>
       </div>
     </div>
   </footer>
@@ -275,9 +281,9 @@
       e.preventDefault();
       const form = this;
       const submitBtn = document.getElementById('form-submit');
-      const msgEl = document.getElementById('form-message');
+      const msgEl = document.getElementById('form-feedback');
       const lang = localStorage.getItem('excellus-lang') || 'en';
-      const t = (typeof translations !== 'undefined' && translations[lang]?.form) ? translations[lang].form : { success: 'Message sent!', error: 'Error sending.', submit: 'Submit request' };
+      const t = (typeof window.excellusTranslations !== 'undefined' && window.excellusTranslations[lang]?.form) ? window.excellusTranslations[lang].form : { success: 'Message sent!', error: 'Error sending.', submit: 'Submit request' };
 
       submitBtn.disabled = true;
       submitBtn.textContent = '...';

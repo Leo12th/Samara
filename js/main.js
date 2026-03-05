@@ -31,7 +31,7 @@ function initHeader() {
 
 function initScrollReveal() {
   const revealElements = document.querySelectorAll(
-    '.section-header, .expertise-card, .why-card, .testimonial-card, .gallery__item, .stats__text, .before-after__content'
+    '.section-header, .expertise-card, .process-card, .testimonial-card, .gallery__item, .stats__item, .before-after__content'
   );
 
   const observer = new IntersectionObserver(
