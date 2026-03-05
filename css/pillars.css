@@ -1,0 +1,141 @@
+/* Pilares Romanos Sutis - Excellus */
+
+/* Pilares decorativos no Hero */
+.hero__pillars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero__pillars::before,
+.hero__pillars::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(195, 126, 26, 0.08) 5%,
+    rgba(195, 126, 26, 0.12) 15%,
+    rgba(195, 126, 26, 0.1) 50%,
+    rgba(195, 126, 26, 0.12) 85%,
+    rgba(195, 126, 26, 0.08) 95%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+.hero__pillars::before {
+  left: 5%;
+  border-left: 1px solid rgba(195, 126, 26, 0.2);
+}
+
+.hero__pillars::after {
+  right: 5%;
+  border-right: 1px solid rgba(195, 126, 26, 0.2);
+}
+
+/* Pilares centrais adicionais no hero (opcional, mais sutis) */
+.hero__pillars {
+  background-image: 
+    linear-gradient(90deg, rgba(195, 126, 26, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(195, 126, 26, 0.06) 1px, transparent 1px);
+  background-size: 20% 100%;
+  background-position: 20% 0, 80% 0;
+}
+
+/* Bordas laterais em seções - pilares minimalistas */
+.section-pillars {
+  position: relative;
+}
+
+.section-pillars::before,
+.section-pillars::after {
+  content: '';
+  position: absolute;
+  top: var(--space-8);
+  bottom: var(--space-8);
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--color-gold-muted) 20%,
+    var(--color-gold-muted) 80%,
+    transparent
+  );
+  opacity: 0.5;
+  transition: opacity var(--transition-base);
+}
+
+.section-pillars::before {
+  left: max(var(--container-padding), 2%);
+}
+
+.section-pillars::after {
+  right: max(var(--container-padding), 2%);
+}
+
+/* Divisórias entre seções - colunas estilizadas */
+.expertise::before,
+.before-after::before,
+.why-choose::before,
+.testimonials::before,
+.gallery::before {
+  content: '';
+  display: block;
+  height: 40px;
+  margin: 0 auto var(--space-12);
+  width: 80%;
+  max-width: 400px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold-subtle) 15%,
+    var(--color-gold-muted) 50%,
+    var(--color-gold-subtle) 85%,
+    transparent 100%
+  );
+  clip-path: polygon(0 50%, 5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%);
+  opacity: 0.6;
+}
+
+/* Footer - linhas verticais douradas entre colunas */
+.footer__columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--space-8);
+  padding: var(--space-12) 0;
+  position: relative;
+}
+
+.footer__col:not(:first-child) {
+  border-left: 1px solid var(--color-gold-subtle);
+  padding-left: var(--space-8);
+}
+
+html[data-theme="light"] .footer__col:not(:first-child) {
+  border-left-color: var(--color-gold-muted);
+}
+
+/* Responsivo - esconder pilares em telas pequenas */
+@media (max-width: 768px) {
+  .hero__pillars::before,
+  .hero__pillars::after {
+    width: 30px;
+    opacity: 0.3;
+  }
+
+  .section-pillars::before,
+  .section-pillars::after {
+    display: none;
+  }
+
+  .footer__col:not(:first-child) {
+    border-left: none;
+    padding-left: 0;
+  }
+}

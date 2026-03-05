@@ -1,0 +1,49 @@
+/**
+ * Excellus - Tipografia do Manual de Marca
+ * CoFo Gothic VF (principal) | Abril Display (secundária)
+ *
+ * Adicione os arquivos de fonte em assets/fonts/:
+ * - CoFoGothic-VF.woff2 (ou .woff)
+ * - AbrilDisplay-Regular.woff2
+ * - AbrilDisplay-Italic.woff2 (opcional)
+ */
+
+/* CoFo Gothic VF - Tipografia principal (logo, materiais digitais e impressos) */
+@font-face {
+  font-family: 'CoFo Gothic';
+  src: url('../assets/fonts/CoFoGothic-VF.woff2') format('woff2'),
+       url('../assets/fonts/CoFoGothic-VF.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CoFo Gothic';
+  src: url('../assets/fonts/CoFoGothic-VF-Italic.woff2') format('woff2'),
+       url('../assets/fonts/CoFoGothic-VF-Italic.woff') format('woff');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Abril Display - Tipografia secundária (palavras-chave, destaque, elegância) */
+@font-face {
+  font-family: 'Abril Display';
+  src: url('../assets/fonts/AbrilDisplay-Regular.woff2') format('woff2'),
+       url('../assets/fonts/AbrilDisplay-Regular.woff') format('woff'),
+       url('../assets/fonts/AbrilDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Abril Display';
+  src: url('../assets/fonts/AbrilDisplay-Italic.woff2') format('woff2'),
+       url('../assets/fonts/AbrilDisplay-Italic.woff') format('woff'),
+       url('../assets/fonts/AbrilDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}

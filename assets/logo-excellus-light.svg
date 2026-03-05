@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 52" fill="none">
+  <defs>
+    <linearGradient id="goldGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e09b35"/>
+      <stop offset="50%" style="stop-color:#c37e1a"/>
+      <stop offset="100%" style="stop-color:#a66a15"/>
+    </linearGradient>
+    <filter id="softGlowLight">
+      <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="#c37e1a" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Casa: telhado + corpo com 3 pilares -->
+  <g fill="url(#goldGradLight)" filter="url(#softGlowLight)">
+    <!-- Telhado triangular -->
+    <path d="M8 18 L22 2 L36 18 L34 18 L34 38 L10 38 L10 18 Z"/>
+    <!-- Pilar esquerdo -->
+    <rect x="12" y="20" width="4" height="18"/>
+    <!-- Pilar direito -->
+    <rect x="28" y="20" width="4" height="18"/>
+    <!-- Pilar central (forma W/U) -->
+    <rect x="19" y="20" width="6" height="18"/>
+  </g>
+  <text x="46" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1a1a1a">excellus</text>
+  <text x="46" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="rgba(26,26,26,0.85)">group</text>
+</svg>

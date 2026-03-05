@@ -1,0 +1,102 @@
+:root,
+[data-theme="dark"] {
+  /* Modo escuro - Manual de Marca Excellus (#c37e1a, #000000) */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #242424;
+  --color-bg-card: rgba(26, 26, 26, 0.9);
+
+  --color-gold: #c37e1a;
+  --color-gold-light: #d48a2a;
+  --color-gold-dark: #a66a15;
+  --color-gold-muted: rgba(195, 126, 26, 0.6);
+  --color-gold-subtle: rgba(195, 126, 26, 0.2);
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e8e8e8;
+  --color-text-muted: #a0aec0;
+
+  --color-border: rgba(195, 126, 26, 0.3);
+  --color-overlay: rgba(10, 10, 10, 0.75);
+  --color-header-bg: rgba(10, 10, 10, 0.85);
+  --color-hero-overlay: linear-gradient(180deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.82) 50%, rgba(10,10,10,0.92) 100%);
+
+  /* Tipografia - Manual de Marca Excellus */
+  --font-heading: 'Abril Display', Georgia, serif;
+  --font-body: 'CoFo Gothic', system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* Espaçamentos */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-padding: 1.5rem;
+  --header-height: 80px;
+
+  /* Transições */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 0 20px rgba(195, 126, 26, 0.25);
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+[data-theme="light"] {
+  /* Modo claro - dourado e branco */
+  --color-bg-primary: #fafaf8;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f5f5f3;
+  --color-bg-card: rgba(255, 255, 255, 0.95);
+
+  --color-gold: #c37e1a;
+  --color-gold-light: #d48a2a;
+  --color-gold-dark: #a66a15;
+  --color-gold-muted: rgba(195, 126, 26, 0.6);
+  --color-gold-subtle: rgba(195, 126, 26, 0.15);
+
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #2d2d2d;
+  --color-text-muted: #6b6b6b;
+
+  --color-border: rgba(195, 126, 26, 0.25);
+  --color-overlay: rgba(250, 250, 248, 0.85);
+  --color-header-bg: rgba(255, 255, 255, 0.9);
+  --color-hero-overlay: linear-gradient(180deg, rgba(250,250,248,0.6) 0%, rgba(250,250,248,0.85) 50%, rgba(250,250,248,0.95) 100%);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --shadow-gold: 0 0 20px rgba(195, 126, 26, 0.2);
+}

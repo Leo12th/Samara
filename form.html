@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      var theme = localStorage.getItem('excellus-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      var lang = localStorage.getItem('excellus-lang') || 'en';
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    })();
+  </script>
+  <meta name="description" content="Request your free estimate - Excellus Remodeling. Building excellence from the ground up.">
+  <title>Request Estimate | Excellus Group</title>
+  <link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pillars.css">
+  <link rel="stylesheet" href="css/patterns.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <style>
+    .form-page {
+      padding: var(--space-24) 0;
+      min-height: calc(100vh - var(--header-height) - 200px);
+    }
+    .form-page__inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .form-page__title {
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: var(--space-2);
+      background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .form-page__subtitle {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-12);
+    }
+    .form-page__form {
+      background: var(--color-bg-secondary);
+      padding: var(--space-12);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gold-subtle);
+    }
+    .form-page__form label {
+      display: block;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-2);
+    }
+    .form-page__form input,
+    .form-page__form select,
+    .form-page__form textarea {
+      width: 100%;
+      padding: var(--space-4);
+      margin-bottom: var(--space-6);
+      background: var(--color-bg-primary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      color: var(--color-text-primary);
+      font-family: inherit;
+      font-size: var(--text-base);
+    }
+    .form-page__form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .form-page__form input:focus,
+    .form-page__form select:focus,
+    .form-page__form textarea:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 0 2px rgba(195, 126, 26, 0.2);
+    }
+    .form-page__form .btn {
+      width: 100%;
+      padding: var(--space-4) var(--space-8);
+      font-size: var(--text-base);
+    }
+    .form-page__message {
+      text-align: center;
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      margin-top: var(--space-4);
+      display: none;
+    }
+    .form-page__message.success {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--color-text-primary);
+      display: block;
+    }
+    .form-page__message.error {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--color-text-primary);
+      display: block;
+    }
+    .form-page__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-gold);
+      margin-bottom: var(--space-8);
+      text-decoration: none;
+      font-size: var(--text-sm);
+    }
+    .form-page__back:hover {
+      color: var(--color-gold-light);
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-dark.png" alt="Excellus Group" class="logo__img logo__img--dark">
+        <img src="assets/logo-light.png" alt="Excellus Group" class="logo__img logo__img--light">
+      </a>
+      <div class="header__menu">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="index.html#home" class="nav__link">Home</a></li>
+            <li><a href="index.html#services" class="nav__link">Services</a></li>
+            <li><a href="index.html#process" class="nav__link">Our Process</a></li>
+            <li><a href="index.html#testimonials" class="nav__link">Testimonials</a></li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+            <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+          </button>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="pt" aria-label="Português">
+              <img src="https://flagcdn.com/w40/br.png" alt="" width="24" height="18" loading="lazy">
+            </button>
+            <span class="lang-divider" aria-hidden="true"></span>
+            <button class="lang-btn active" data-lang="en" aria-label="English">
+              <img src="https://flagcdn.com/w40/us.png" alt="" width="24" height="18" loading="lazy">
+            </button>
+          </div>
+          <a href="form.html" class="btn btn--primary">Get a Free Estimate</a>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="form-page fleur-pattern">
+    <div class="container form-page__inner">
+      <a href="index.html" class="form-page__back">← Back to home</a>
+      <h1 class="form-page__title">Request Your Estimate</h1>
+      <p class="form-page__subtitle">Fill out the form and we will get back to you shortly.</p>
+
+      <!-- Configure: Replace YOUR_FORM_ID with your Formspree form ID from formspree.io -->
+      <form class="form-page__form" id="estimate-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="New estimate request - Excellus">
+        <input type="hidden" name="_language" value="en">
+
+        <label for="form-name">Full name</label>
+        <input type="text" id="form-name" name="name" required placeholder="Full name">
+
+        <label for="form-email">Email</label>
+        <input type="email" id="form-email" name="email" required placeholder="Email">
+
+        <label for="form-phone">Phone</label>
+        <input type="tel" id="form-phone" name="phone" placeholder="Phone">
+
+        <label for="form-type">Project type</label>
+        <select id="form-type" name="project_type">
+          <option value="">Project type</option>
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+          <option value="interior">Interiors</option>
+          <option value="exterior">Exteriors</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="form-message">Describe your project</label>
+        <textarea id="form-message" name="message" required placeholder="Describe your project"></textarea>
+
+        <button type="submit" class="btn btn--primary" id="form-submit">Submit request</button>
+
+        <div class="form-page__message" id="form-message"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__columns">
+        <div class="footer__col">
+          <a href="index.html" class="logo footer__logo">
+            <img src="assets/logo-dark.png" alt="Excellus Group" class="logo__img logo__img--dark">
+            <img src="assets/logo-light.png" alt="Excellus Group" class="logo__img logo__img--light">
+          </a>
+          <div class="footer__desc">
+            <p class="footer__brand">Excellus Remodeling</p>
+            <p class="footer__tagline">Building excellence from the ground up.</p>
+            <p class="footer__services">Remodeling • Flooring • Finishing</p>
+          </div>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook" class="footer__social-shield footer__social-link">
+              <img src="assets/social-facebook-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
+              <img src="assets/social-facebook-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
+            </a>
+            <a href="#" aria-label="Instagram" class="footer__social-shield footer__social-link">
+              <img src="assets/social-instagram-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
+              <img src="assets/social-instagram-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
+            </a>
+            <a href="#" aria-label="LinkedIn" class="footer__social-shield footer__social-link">
+              <img src="assets/social-linkedin-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
+              <img src="assets/social-linkedin-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
+            </a>
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer__social-shield footer__social-link">
+              <img src="assets/social-whatsapp-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
+              <img src="assets/social-whatsapp-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#process">Process</a></li>
+            <li><a href="index.html#gallery">Portfolio</a></li>
+            <li><a href="form.html">Request Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <p>contato@excellus.com</p>
+          <p>Orlando, FL</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Excellus Group. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+  <script>
+    // Form submission handling
+    document.getElementById('estimate-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = this;
+      const submitBtn = document.getElementById('form-submit');
+      const msgEl = document.getElementById('form-message');
+      const lang = localStorage.getItem('excellus-lang') || 'en';
+      const t = (typeof translations !== 'undefined' && translations[lang]?.form) ? translations[lang].form : { success: 'Message sent!', error: 'Error sending.', submit: 'Submit request' };
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '...';
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          msgEl.className = 'form-page__message success';
+          msgEl.textContent = t.success;
+          form.reset();
+        } else {
+          throw new Error('Submit failed');
+        }
+      } catch (err) {
+        msgEl.className = 'form-page__message error';
+        msgEl.textContent = t.error;
+      }
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = t.submit;
+    });
+  </script>
+</body>
+</html>

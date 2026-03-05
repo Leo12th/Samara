@@ -1,0 +1,86 @@
+/**
+ * Excellus - Fundos modernos (substitui padrões tradicionais)
+ * Dot grid sutil, gradientes mesh, estética contemporânea
+ */
+
+/* Seções - grid de pontos sutil (moderno) */
+.fleur-pattern {
+  position: relative;
+}
+
+.fleur-pattern::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle at center,
+    var(--color-gold-subtle) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+html[data-theme="light"] .fleur-pattern::after {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(195, 126, 26, 0.35) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  opacity: 0.6;
+}
+
+.fleur-pattern > .container,
+.fleur-pattern .before-after__content,
+.fleur-pattern .why-choose__grid,
+.fleur-pattern .expertise__carousel {
+  position: relative;
+  z-index: 1;
+}
+
+/* Body - gradiente mesh sutil (moderno) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    radial-gradient(
+      ellipse 80% 50% at 20% 40%,
+      rgba(195, 126, 26, 0.04) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 80% 60%,
+      rgba(195, 126, 26, 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 30% at 50% 100%,
+      rgba(195, 126, 26, 0.02) 0%,
+      transparent 50%
+    );
+}
+
+html[data-theme="light"] body::before {
+  background: 
+    radial-gradient(
+      ellipse 80% 50% at 20% 40%,
+      rgba(195, 126, 26, 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 80% 60%,
+      rgba(195, 126, 26, 0.04) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 30% at 50% 100%,
+      rgba(195, 126, 26, 0.03) 0%,
+      transparent 50%
+    );
+}

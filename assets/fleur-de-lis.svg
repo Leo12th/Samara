@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" shape-rendering="geometricPrecision">
+  <!-- Flor-de-lis simplificada - formas geométricas para bordas nítidas -->
+  <path d="M12 0 L10 12 L12 10 L14 12 Z" fill="#c37e1a" fill-opacity="0.06"/>
+  <path d="M12 14 L6 32 L12 26 L18 32 Z" fill="#c37e1a" fill-opacity="0.06"/>
+  <path d="M12 28 L10 36 L12 34 L14 36 Z" fill="#c37e1a" fill-opacity="0.06"/>
+</svg>
