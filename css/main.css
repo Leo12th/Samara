@@ -970,14 +970,17 @@ html[data-theme="light"] .hero__blob {
   letter-spacing: 0.05em;
 }
 
-/* 1 escudo para cada ícone social */
+/* 1 escudo para cada ícone social - grid 2x2 para alinhamento uniforme */
 .footer__social {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-2);
   margin-top: var(--space-3);
-  justify-content: center;
+  justify-items: center;
   align-items: center;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer__social-shield {
@@ -1042,6 +1045,14 @@ html[data-theme="light"] .footer__social-img--light {
 .footer__col p {
   color: var(--color-text-muted);
   font-size: var(--text-sm);
+}
+
+.footer__col p {
+  margin-bottom: var(--space-2);
+}
+
+.footer__col p:last-child {
+  margin-bottom: 0;
 }
 
 .footer__col a:hover {
