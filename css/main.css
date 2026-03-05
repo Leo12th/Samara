@@ -14,6 +14,9 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -123,6 +126,12 @@ main {
   height: 42px;
   width: auto;
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .logo__img {
+    height: 36px;
+  }
 }
 
 .logo__img--light {
@@ -1116,6 +1125,32 @@ html[data-theme="light"] .hero__blob {
   background: rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 768px) {
+  .lightbox__prev,
+  .lightbox__next {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    left: var(--space-2);
+  }
+
+  .lightbox__next {
+    right: var(--space-2);
+  }
+
+  .lightbox__close {
+    top: var(--space-2);
+    right: var(--space-2);
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+
+  .lightbox__caption {
+    font-size: var(--text-base);
+  }
+}
+
 .lightbox__zoom {
   position: absolute;
   bottom: var(--space-6);
@@ -1551,7 +1586,7 @@ html[data-theme="light"] .footer__credit-img--light {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 var(--space-4);
+    padding: 0 var(--container-padding);
   }
 
   .section-title {
@@ -1564,6 +1599,103 @@ html[data-theme="light"] .footer__credit-img--light {
 
   .stats__filter {
     width: 100%;
+  }
+}
+
+/* ========== MOBILE - Resolução e UX ========== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--container-padding);
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .hero__title {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    line-height: 1.25;
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-base);
+    max-width: 100%;
+  }
+
+  .hero__badge {
+    font-size: 0.65rem;
+    padding: var(--space-1) var(--space-3);
+  }
+
+  .gallery__grid {
+    gap: var(--space-4);
+  }
+
+  .gallery__footer {
+    padding: var(--space-4);
+    font-size: 0.7rem;
+  }
+
+  .gallery__footer strong {
+    font-size: var(--text-sm);
+  }
+
+  .stats__item {
+    padding: var(--space-4);
+  }
+
+  .stats__number {
+    font-size: var(--text-xl);
+  }
+
+  .process-card {
+    padding: var(--space-6);
+  }
+
+  .why-card {
+    padding: var(--space-6);
+  }
+
+  .testimonial-card {
+    padding: var(--space-6);
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .theme-toggle,
+  .lang-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .before-after__slider {
+    margin: var(--space-4) 0;
+  }
+
+  .ba-slider {
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .gallery__item-media {
+    aspect-ratio: 4/3;
   }
 }
 
