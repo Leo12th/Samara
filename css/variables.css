@@ -53,7 +53,9 @@
   /* Layout */
   --container-max: 1280px;
   --container-padding: 1.5rem;
+  --container-padding-mobile: 1rem;
   --header-height: 80px;
+  --header-height-mobile: 64px;
 
   /* Transições */
   --transition-fast: 150ms ease;
@@ -71,6 +73,15 @@
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
+}
+
+@media (max-width: 768px) {
+  :root,
+  [data-theme="dark"],
+  [data-theme="light"] {
+    --header-height: 64px;
+    --container-padding: 1rem;
+  }
 }
 
 [data-theme="light"] {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <script>
     (function() {
       var theme = localStorage.getItem('excellus-theme') || 'dark';
@@ -35,14 +35,15 @@
       <div class="header__menu">
         <nav class="nav">
           <ul class="nav__list">
-            <li><a href="#home" class="nav__link">Início</a></li>
-            <li><a href="#services" class="nav__link">Serviços</a></li>
-            <li><a href="#process" class="nav__link">Nosso Processo</a></li>
-            <li><a href="#testimonials" class="nav__link">Depoimentos</a></li>
+            <li><a href="#home" class="nav__link" data-i18n="nav.home">Início</a></li>
+            <li><a href="#services" class="nav__link" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="#process" class="nav__link" data-i18n="nav.process">Nosso Processo</a></li>
+            <li><a href="#testimonials" class="nav__link" data-i18n="nav.testimonials">Depoimentos</a></li>
+            <li><a href="about.html" class="nav__link" data-i18n="nav.about">Sobre</a></li>
           </ul>
         </nav>
         <div class="header__actions">
-          <button class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema claro/escuro">
+          <button class="theme-toggle" type="button" data-i18n-attr="aria-label" data-i18n-attr-key="themeToggle.aria" data-i18n-attr-title="themeToggle.title">
             <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
             <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
           </button>
@@ -55,10 +56,10 @@
               <img src="https://flagcdn.com/w40/us.png" alt="" width="24" height="18" loading="lazy">
             </button>
           </div>
-          <a href="form.html" class="btn btn--primary">Get a Free Estimate</a>
+          <a href="form.html" class="btn btn--primary header__cta" data-i18n="cta">Schedule Consultation</a>
         </div>
       </div>
-      <button class="nav-toggle" aria-label="Abrir menu">
+      <button class="nav-toggle" data-i18n-attr="aria-label" data-i18n-attr-key="navToggle.aria">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -69,7 +70,7 @@
     <section class="hero" id="home">
       <div class="hero__gold-strip" aria-hidden="true"></div>
       <div class="hero__pillars" aria-hidden="true"></div>
-      <div class="hero__bg" role="img" aria-label="Arquitetura clássica - pilares de excelência">
+      <div class="hero__bg" role="img" data-i18n-attr="aria-label" data-i18n-attr-key="hero.bgAria">
         <img class="hero__bg-img hero__bg-img--dark" src="assets/hero-dark.png" alt="" loading="eager" fetchpriority="high">
         <img class="hero__bg-img hero__bg-img--light" src="assets/hero-light.png" alt="" loading="eager" fetchpriority="high">
         <div class="hero__marble-overlay"></div>
@@ -77,17 +78,17 @@
       <div class="hero__overlay"></div>
       <div class="hero__blob blob" aria-hidden="true"></div>
       <div class="container hero__content">
-        <span class="hero__badge animated-gradient">Reformas Premium</span>
+        <span class="hero__badge animated-gradient" data-i18n="hero.badge">Luxury Home Remodeling</span>
         <h1 class="hero__title">
-          <span class="hero__title-line">Reformas Exclusivas.</span>
-          <span class="hero__title-line hero__title--gold">Resultados Excepcionais.</span>
+          <span class="hero__title-line" data-i18n="hero.title1">Luxury Home Remodeling</span>
+          <span class="hero__title-line hero__title--gold" data-i18n="hero.title2">in Orlando</span>
         </h1>
-        <p class="hero__subtitle">
-          Construindo excelência desde a base. Reformas, pisos e acabamentos sob medida para transformar sua casa.
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          Custom kitchen, bathroom and whole-home renovations for homeowners who expect exceptional craftsmanship.
         </p>
         <div class="hero__cta">
-          <a href="#gallery" class="btn btn--primary">Ver Portfólio</a>
-          <a href="#process" class="btn btn--outline">Nosso Processo</a>
+          <a href="form.html" class="btn btn--primary" data-i18n="hero.btnConsult">Schedule Consultation</a>
+          <a href="#gallery" class="btn btn--outline" data-i18n="hero.btnProjects">View Our Projects</a>
         </div>
       </div>
     </section>
@@ -95,14 +96,23 @@
     <!-- Estatísticas -->
     <section class="stats section-pillars fleur-pattern">
       <div class="container">
-        <p class="stats__text">
-          <strong>500+</strong> reformas de luxo concluídas
-        </p>
-        <div class="stats__filters">
-          <button class="stats__filter active" data-filter="residential">Residencial</button>
-          <button class="stats__filter" data-filter="commercial">Comercial</button>
-          <button class="stats__filter" data-filter="interiors">Interiores</button>
-          <button class="stats__filter" data-filter="exteriors">Exteriores</button>
+        <div class="stats__grid">
+          <div class="stats__item">
+            <strong class="stats__number" data-i18n="stats.stat1">500+</strong>
+            <span class="stats__label" data-i18n="stats.stat1Label">Projects Completed</span>
+          </div>
+          <div class="stats__item">
+            <strong class="stats__number" data-i18n="stats.stat2">5+</strong>
+            <span class="stats__label" data-i18n="stats.stat2Label">Years Experience</span>
+          </div>
+          <div class="stats__item">
+            <strong class="stats__number" data-i18n="stats.stat3">✓</strong>
+            <span class="stats__label" data-i18n="stats.stat3Label">Licensed & Insured Projects</span>
+          </div>
+          <div class="stats__item">
+            <strong class="stats__number" data-i18n="stats.stat4">📍</strong>
+            <span class="stats__label" data-i18n="stats.stat4Label">Serving Orlando & Surrounding Areas</span>
+          </div>
         </div>
       </div>
     </section>
@@ -111,8 +121,8 @@
     <section class="expertise fleur-pattern" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Nossa Especialidade</span>
-          <h2 class="section-title gradient-text">Reformas de Luxo</h2>
+          <span class="section-label" data-i18n="expertise.label">Nossa Especialidade</span>
+          <h2 class="section-title gradient-text" data-i18n="expertise.title">Reformas de Luxo</h2>
         </div>
         <div class="expertise__carousel">
           <button class="expertise__prev" type="button" aria-label="Anterior">‹</button>
@@ -146,7 +156,7 @@
             </article>
           </div>
           </div>
-          <div class="expertise__dots" aria-label="Navegação do carrossel"></div>
+          <div class="expertise__dots" aria-label="Navegação do carrossel" data-i18n-attr="aria-label" data-i18n-attr-key="expertise.carouselAria"></div>
         </div>
       </div>
     </section>
@@ -155,7 +165,7 @@
     <section class="before-after fleur-pattern" id="transformations">
       <div class="container before-after__inner">
         <div class="before-after__content">
-          <h2 class="section-title gradient-text">Redescubra seu espaço</h2>
+          <h2 class="section-title gradient-text" data-i18n="beforeAfter.title">Redescubra seu espaço</h2>
           <div class="before-after__slider">
             <div class="ba-slider">
               <div class="ba-slider__before">
@@ -171,34 +181,39 @@
             </div>
           </div>
           <ul class="before-after__benefits">
-            <li><span class="check">✓</span> Layout completo e reconfiguração</li>
-            <li><span class="check">✓</span> Materiais de alta qualidade e tecnologia</li>
-            <li><span class="check">✓</span> Iluminação personalizada</li>
+            <li data-i18n-html="beforeAfter.benefit1Html"><span class="check">✓</span> Layout completo e reconfiguração</li>
+            <li data-i18n-html="beforeAfter.benefit2Html"><span class="check">✓</span> Materiais de alta qualidade e tecnologia</li>
+            <li data-i18n-html="beforeAfter.benefit3Html"><span class="check">✓</span> Iluminação personalizada</li>
           </ul>
-          <a href="#gallery" class="link-arrow">Ver mais transformações →</a>
+          <a href="#gallery" class="link-arrow" data-i18n="beforeAfter.more">Ver mais transformações →</a>
         </div>
       </div>
     </section>
 
-    <!-- Por que nos escolher -->
-    <section class="why-choose fleur-pattern" id="process">
+    <!-- Nosso Processo -->
+    <section class="process-section fleur-pattern" id="process">
       <div class="container">
-        <h2 class="section-title section-title--center gradient-text">Por que Escolher a Excellus</h2>
-        <div class="why-choose__grid">
-          <article class="why-card card-3d spotlight-card gradient-border stagger-1">
-            <div class="why-card__icon">⚒</div>
-            <h3 class="why-card__title">Artesanato de Mestre</h3>
-            <p class="why-card__text">Cada detalhe é executado com precisão e dedicação pelos melhores profissionais.</p>
+        <h2 class="section-title section-title--center gradient-text" data-i18n="process.title">Our Process</h2>
+        <div class="process__grid">
+          <article class="process-card card-3d gradient-border">
+            <span class="process-card__step">1</span>
+            <h3 class="process-card__title" data-i18n="process.step1">Consultation</h3>
+            <p class="process-card__text" data-i18n="process.step1Text">We understand your vision and evaluate the space.</p>
           </article>
-          <article class="why-card card-3d spotlight-card gradient-border stagger-2">
-            <div class="why-card__icon">🛡</div>
-            <h3 class="why-card__title">Preço Fixo Garantido</h3>
-            <p class="why-card__text">Sem surpresas. O valor acordado é o valor final do projeto.</p>
+          <article class="process-card card-3d gradient-border">
+            <span class="process-card__step">2</span>
+            <h3 class="process-card__title" data-i18n="process.step2">Design Planning</h3>
+            <p class="process-card__text" data-i18n="process.step2Text">We develop a renovation plan and material selection.</p>
           </article>
-          <article class="why-card card-3d spotlight-card gradient-border stagger-3">
-            <div class="why-card__icon">📐</div>
-            <h3 class="why-card__title">Expertise em Design-Build</h3>
-            <p class="why-card__text">Projeto e execução integrados para um resultado perfeito.</p>
+          <article class="process-card card-3d gradient-border">
+            <span class="process-card__step">3</span>
+            <h3 class="process-card__title" data-i18n="process.step3">Construction</h3>
+            <p class="process-card__text" data-i18n="process.step3Text">Our team executes the project with precision.</p>
+          </article>
+          <article class="process-card card-3d gradient-border">
+            <span class="process-card__step">4</span>
+            <h3 class="process-card__title" data-i18n="process.step4">Final Walkthrough</h3>
+            <p class="process-card__text" data-i18n="process.step4Text">We ensure every detail meets your expectations.</p>
           </article>
         </div>
       </div>
@@ -208,70 +223,70 @@
     <section class="testimonials" id="testimonials">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Histórias de Clientes</span>
-          <h2 class="section-title gradient-text">O que Nossos Clientes Dizem</h2>
+          <span class="section-label" data-i18n="testimonials.label">Histórias de Clientes</span>
+          <h2 class="section-title gradient-text" data-i18n="testimonials.title">O que Nossos Clientes Dizem</h2>
         </div>
         <div class="testimonials__slider">
           <div class="testimonials__track">
             <article class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote">"A Excellus transformou nossa cozinha em um espaço dos sonhos. Profissionalismo e qualidade excepcionais."</blockquote>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote1">"A Excellus transformou nossa cozinha em um espaço dos sonhos. Profissionalismo e qualidade excepcionais."</blockquote>
               <div class="testimonial-card__author">
                 <img src="https://i.pravatar.cc/80?img=1" alt="Maria Silva" loading="lazy">
                 <div>
                   <strong>Maria Silva</strong>
-                  <span>Proprietária</span>
+                  <span data-i18n="testimonials.author1Role">Proprietária</span>
                 </div>
               </div>
             </article>
             <article class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote">"O banheiro ficou incrível. Cada detalhe foi pensado. Recomendo de olhos fechados."</blockquote>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote2">"O banheiro ficou incrível. Cada detalhe foi pensado. Recomendo de olhos fechados."</blockquote>
               <div class="testimonial-card__author">
                 <img src="https://i.pravatar.cc/80?img=12" alt="João Santos" loading="lazy">
                 <div>
                   <strong>João Santos</strong>
-                  <span>Arquiteto</span>
+                  <span data-i18n="testimonials.author2Role">Arquiteto</span>
                 </div>
               </div>
             </article>
             <article class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote">"Reforma completa da casa. Prazo cumprido, orçamento respeitado. Excelência em tudo."</blockquote>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote3">"Reforma completa da casa. Prazo cumprido, orçamento respeitado. Excelência em tudo."</blockquote>
               <div class="testimonial-card__author">
                 <img src="https://i.pravatar.cc/80?img=5" alt="Ana Costa" loading="lazy">
                 <div>
                   <strong>Ana Costa</strong>
-                  <span>Designer de Interiores</span>
+                  <span data-i18n="testimonials.author3Role">Designer de Interiores</span>
                 </div>
               </div>
             </article>
             <article class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote">"Atendimento impecável do início ao fim. Nossa suíte ficou digna de hotel cinco estrelas."</blockquote>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote4">"Atendimento impecável do início ao fim. Nossa suíte ficou digna de hotel cinco estrelas."</blockquote>
               <div class="testimonial-card__author">
                 <img src="https://i.pravatar.cc/80?img=9" alt="Carla Mendes" loading="lazy">
                 <div>
                   <strong>Carla Mendes</strong>
-                  <span>Empresária</span>
+                  <span data-i18n="testimonials.author4Role">Empresária</span>
                 </div>
               </div>
             </article>
             <article class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote">"A área gourmet que sempre sonhamos. Qualidade dos materiais e acabamento perfeito."</blockquote>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote5">"A área gourmet que sempre sonhamos. Qualidade dos materiais e acabamento perfeito."</blockquote>
               <div class="testimonial-card__author">
                 <img src="https://i.pravatar.cc/80?img=20" alt="Fernanda Lima" loading="lazy">
                 <div>
                   <strong>Fernanda Lima</strong>
-                  <span>Proprietária</span>
+                  <span data-i18n="testimonials.author5Role">Proprietária</span>
                 </div>
               </div>
             </article>
           </div>
           <div class="testimonials__nav">
-            <button class="testimonials__prev" aria-label="Anterior">‹</button>
-            <button class="testimonials__next" aria-label="Próximo">›</button>
+            <button class="testimonials__prev" data-i18n-attr="aria-label" data-i18n-attr-key="lightbox.prev">‹</button>
+            <button class="testimonials__next" data-i18n-attr="aria-label" data-i18n-attr-key="lightbox.next">›</button>
           </div>
         </div>
       </div>
@@ -281,8 +296,8 @@
     <section class="gallery" id="gallery">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Portfólio</span>
-          <h2 class="section-title gradient-text">Projetos Concluídos</h2>
+          <span class="section-label" data-i18n="gallery.label">Portfólio</span>
+          <h2 class="section-title gradient-text" data-i18n="gallery.title">Projetos Concluídos</h2>
         </div>
         <div class="gallery__grid">
           <article class="gallery__item gallery__card card-3d gradient-border" data-category="residential exteriors">
@@ -329,12 +344,39 @@
       </div>
     </section>
 
+    <!-- Mapa -->
+    <section class="map-section" id="map">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" data-i18n="map.label">Localização</span>
+          <h2 class="section-title gradient-text" data-i18n="map.title">Onde Estamos</h2>
+        </div>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-81.55%2C28.45%2C-81.25%2C28.65&layer=mapnik&marker=28.5383,-81.3792"
+            width="100%"
+            height="400"
+            style="border:0;"
+            loading="lazy"
+            title="Excellus Remodeling - Orlando, FL">
+          </iframe>
+          <div class="map-overlay">
+            <div class="map-info">
+              <h3>Excellus Remodeling</h3>
+              <p>Orlando, FL</p>
+              <a href="https://www.google.com/maps/dir//Orlando,+FL" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm" data-i18n="map.directions">Como chegar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contato -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2 class="section-title section-title--center gradient-text">Entre em Contato</h2>
-        <p class="contact__text">Solicite um orçamento gratuito e sem compromisso.</p>
-        <a href="form.html" class="btn btn--primary btn--lg contact__cta">Get a Free Estimate</a>
+        <h2 class="section-title section-title--center gradient-text" data-i18n="contact.title">Ready to transform your home?</h2>
+        <p class="contact__text" data-i18n="contact.text">Schedule your consultation with our team today.</p>
+        <a href="form.html" class="btn btn--primary btn--lg contact__cta" data-i18n="cta">Schedule Consultation</a>
       </div>
     </section>
   </main>
@@ -349,9 +391,9 @@
             <img src="assets/logo-light.png" alt="Excellus Group" class="logo__img logo__img--light">
           </a>
           <div class="footer__desc">
-            <p class="footer__brand">Excellus Remodeling</p>
-            <p class="footer__tagline">Construindo excelência desde a base.</p>
-            <p class="footer__services">Reformas • Pisos • Acabamentos</p>
+            <p class="footer__brand" data-i18n="footer.brand">Excellus Remodeling</p>
+            <p class="footer__tagline" data-i18n="footer.tagline">Construindo excelência desde a base.</p>
+            <p class="footer__services" data-i18n="footer.services">Reformas • Pisos • Acabamentos</p>
           </div>
           <div class="footer__social">
             <a href="#" aria-label="Facebook" class="footer__social-shield footer__social-link">
@@ -366,49 +408,67 @@
               <img src="assets/social-linkedin-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
               <img src="assets/social-linkedin-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
             </a>
-            <a href="https://wa.me/14074702989?text=Olá! Gostaria de solicitar um orçamento." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer__social-shield footer__social-link">
+            <a href="https://wa.me/14074702989?text=Hello!%20I%20would%20like%20to%20schedule%20a%20consultation." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer__social-shield footer__social-link footer__whatsapp">
               <img src="assets/social-whatsapp-dark.png" alt="" class="footer__social-img footer__social-img--dark" width="88" height="96" loading="lazy">
               <img src="assets/social-whatsapp-light.png" alt="" class="footer__social-img footer__social-img--light" width="88" height="96" loading="lazy">
             </a>
           </div>
         </div>
         <div class="footer__col">
-          <h4>Links Rápidos</h4>
+          <h4 data-i18n="footer.quickLinks">Links Rápidos</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#gallery">Portfolio</a></li>
-            <li><a href="form.html">Request Quote</a></li>
+            <li><a href="#home" data-i18n="footer.navHome">Home</a></li>
+            <li><a href="#services" data-i18n="footer.navServices">Services</a></li>
+            <li><a href="#process" data-i18n="footer.navProcess">Process</a></li>
+            <li><a href="#gallery" data-i18n="footer.navPortfolio">Portfolio</a></li>
+            <li><a href="about.html" data-i18n="footer.navAbout">About</a></li>
+            <li><a href="form.html" data-i18n="footer.navRequestQuote">Schedule Consultation</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4>Contato</h4>
+          <h4 data-i18n="footer.contact">Contato</h4>
           <p><a href="mailto:Remodeling@excellusgroup.com">Remodeling@excellusgroup.com</a></p>
           <p><a href="tel:+14074702989">+1 (407) 470-2989</a></p>
           <p>Orlando, FL</p>
         </div>
         <div class="footer__col">
-          <h4>Newsletter</h4>
+          <h4 data-i18n="footer.newsletter">Newsletter</h4>
           <form class="newsletter">
-            <input type="email" placeholder="Seu e-mail" required>
-            <button type="submit" class="btn btn--primary">Inscrever</button>
+            <input type="email" data-i18n-placeholder="footer.placeholder" placeholder="Seu e-mail" required>
+            <button type="submit" class="btn btn--primary" data-i18n="footer.subscribe">Inscrever</button>
           </form>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2025 Excellus Group. Todos os direitos reservados.</p>
+        <p class="footer__copyright" data-i18n="footer.rights">© 2025 Excellus Group. Todos os direitos reservados.</p>
+        <div class="footer__credits">
+          <img src="assets/by-bruna-pazuch.png" alt="by Bruna Pazuch" class="footer__credit-img footer__credit-img--dark">
+          <img src="assets/by-samara-pagnon.png" alt="by Bruna Pazuch" class="footer__credit-img footer__credit-img--light">
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- Balão WhatsApp - altere 5511999999999 pelo número com DDI (ex: 5511999999999 Brasil, 14075551234 EUA) -->
-  <a href="https://wa.me/14074702989?text=Olá! Gostaria de solicitar um orçamento." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chamar no WhatsApp">
+  <a href="https://wa.me/14074702989?text=Hello!%20I%20would%20like%20to%20schedule%20a%20consultation." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chamar no WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
-    <span class="whatsapp-float__tooltip">Chamar no WhatsApp</span>
+    <span class="whatsapp-float__tooltip" data-i18n="whatsapp">Chamar no WhatsApp</span>
   </a>
+
+  <!-- Lightbox Galeria -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" data-i18n-attr="aria-label" data-i18n-attr-key="lightbox.ariaLabel">
+    <button class="lightbox__close" data-i18n-attr="aria-label" data-i18n-attr-key="lightbox.close">&times;</button>
+    <button class="lightbox__prev" data-i18n-attr="aria-label" data-i18n-attr-key="lightbox.prev">‹</button>
+    <button class="lightbox__next" data-i18n-attr="aria-label" data-i18n-attr-key="lightbox.next">›</button>
+    <div class="lightbox__content">
+      <img class="lightbox__img" src="" alt="">
+      <div class="lightbox__caption"></div>
+      <div class="lightbox__counter"></div>
+    </div>
+    <button class="lightbox__zoom" data-i18n-attr="aria-label" data-i18n-attr-key="lightbox.zoom" data-i18n-attr-title="lightbox.zoom">+</button>
+  </div>
 
   <script src="js/theme.js"></script>
   <script src="js/main.js"></script>
@@ -416,6 +476,7 @@
   <script src="js/before-after.js"></script>
   <script src="js/expertise-carousel.js"></script>
   <script src="js/testimonials.js"></script>
+  <script src="js/lightbox.js"></script>
   <script src="js/i18n.js"></script>
 </body>
 </html>
