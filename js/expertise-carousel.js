@@ -11,18 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!carousel || !track || !dotsContainer) return;
 
   const cards = track.querySelectorAll('.expertise-card');
-  const totalCards = cards.length;
-  const slidesCount = 3; // 3 slides (cada um mostra 3 cards)
+  const slidesCount = cards.length;
 
-  if (totalCards === 0) return;
+  if (slidesCount === 0) return;
 
   let currentIndex = 0;
   let autoInterval;
 
   function updatePosition() {
-    const cardWidthPercent = 100 / totalCards;
-    const offset = currentIndex * cardWidthPercent;
-    track.style.transform = `translateX(-${offset}%)`;
+    const offsetPercent = (currentIndex / slidesCount) * 100;
+    track.style.transform = `translateX(-${offsetPercent}%)`;
   }
 
   function updateDots() {
@@ -43,6 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
     goTo(currentIndex + 1);
   }
 
+  function prev() {
+    goTo(currentIndex - 1);
+  }
+
   function startAutoPlay() {
     stopAutoPlay();
     autoInterval = setInterval(next, 4000);
@@ -55,7 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Criar dots (3 slides)
+  // Botões prev/next
+  const prevBtn = carousel.querySelector('.expertise__prev');
+  const nextBtn = carousel.querySelector('.expertise__next');
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoPlay(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoPlay(); });
+
+  // Criar dots (um por slide)
   for (let i = 0; i < slidesCount; i++) {
     const dot = document.createElement('button');
     dot.type = 'button';

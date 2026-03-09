@@ -69,14 +69,16 @@ const translations = {
     gallery: {
       label: 'Portfólio',
       title: 'Projetos Concluídos',
-      livingRoom: 'Sala de Estar',
-      kitchen: 'Cozinha',
-      bathroom: 'Banheiro',
-      suite: 'Suíte',
-      gourmet: 'Área Gourmet',
-      office: 'Escritório',
-      store: 'Sala Comercial',
-      facade: 'Fachada',
+      duration: 'Duração',
+      scope: 'Escopo',
+      weeks: 'semanas',
+      projects: [
+        { title: 'Windermere Gourmet Area', scope: 'outdoor kitchen + flooring' },
+        { title: 'Lake Nona Full Home Remodel', scope: 'full home renovation + flooring' },
+        { title: 'Downtown Kitchen Remodel', scope: 'kitchen renovation' },
+        { title: 'Dr. Phillips Master Bathroom', scope: 'master bathroom renovation' },
+      ],
+      projectDurations: [6, 10, 8, 3],
     },
     contact: {
       title: 'Entre em Contato',
@@ -185,14 +187,16 @@ const translations = {
     gallery: {
       label: 'Portfolio',
       title: 'Completed Projects',
-      livingRoom: 'Living Room',
-      kitchen: 'Kitchen',
-      bathroom: 'Bathroom',
-      suite: 'Suite',
-      gourmet: 'Gourmet Area',
-      office: 'Office',
-      store: 'Commercial Space',
-      facade: 'Facade',
+      duration: 'Duration',
+      scope: 'Scope',
+      weeks: 'weeks',
+      projects: [
+        { title: 'Windermere Gourmet Area', scope: 'outdoor kitchen + flooring' },
+        { title: 'Lake Nona Full Home Remodel', scope: 'full home renovation + flooring' },
+        { title: 'Downtown Kitchen Remodel', scope: 'kitchen renovation' },
+        { title: 'Dr. Phillips Master Bathroom', scope: 'master bathroom renovation' },
+      ],
+      projectDurations: [6, 10, 8, 3],
     },
     contact: {
       title: 'Get in Touch',
@@ -333,17 +337,18 @@ function setLanguage(lang) {
   if (galleryLabels.length) galleryLabels[0].textContent = t.gallery.label;
   const galleryTitles = document.querySelectorAll('.gallery .section-title');
   if (galleryTitles.length) galleryTitles[0].textContent = t.gallery.title;
-  const galleryOverlays = document.querySelectorAll('.gallery__overlay');
-  if (galleryOverlays.length >= 8) {
-    galleryOverlays[0].textContent = t.gallery.livingRoom;
-    galleryOverlays[1].textContent = t.gallery.kitchen;
-    galleryOverlays[2].textContent = t.gallery.bathroom;
-    galleryOverlays[3].textContent = t.gallery.suite;
-    galleryOverlays[4].textContent = t.gallery.gourmet;
-    galleryOverlays[5].textContent = t.gallery.office;
-    galleryOverlays[6].textContent = t.gallery.store;
-    galleryOverlays[7].textContent = t.gallery.facade;
-  }
+  const galleryCards = document.querySelectorAll('.gallery__card');
+  const projects = t.gallery.projects || [];
+  const durations = t.gallery.projectDurations || [];
+  galleryCards.forEach((card, i) => {
+    const titleEl = card.querySelector('.gallery__card-title');
+    const metaEls = card.querySelectorAll('.gallery__card-meta');
+    if (titleEl && projects[i]) titleEl.textContent = projects[i].title;
+    if (metaEls.length >= 2 && projects[i]) {
+      metaEls[0].innerHTML = `<span>${t.gallery.duration}:</span> ${durations[i] || 0} ${t.gallery.weeks}`;
+      metaEls[1].innerHTML = `<span>${t.gallery.scope}:</span> ${projects[i].scope}`;
+    }
+  });
 
   // Contact
   document.querySelector('.contact .section-title')?.replaceChildren(t.contact.title);
