@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getT() {
-    const lang = localStorage.getItem('excellus-lang') || 'en';
+    const lang = (typeof window.excellusCurrentLang !== 'undefined') ? window.excellusCurrentLang : 'en';
     const t = (typeof window.excellusTranslations !== 'undefined' && window.excellusTranslations[lang]?.lightbox)
       ? window.excellusTranslations[lang].lightbox
       : { zoom: 'Zoom in', zoomOut: 'Zoom out' };

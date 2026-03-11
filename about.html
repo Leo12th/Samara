@@ -7,8 +7,7 @@
     (function() {
       var theme = localStorage.getItem('excellus-theme') || 'dark';
       document.documentElement.setAttribute('data-theme', theme);
-      var lang = localStorage.getItem('excellus-lang') || 'en';
-      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      document.documentElement.lang = 'en';
     })();
   </script>
   <meta name="description" content="Conheça a Excellus Remodeling - Nossa história, equipe, valores e certificações. Building excellence from the ground up.">
@@ -173,11 +172,11 @@
             <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
           </button>
           <div class="lang-switcher">
-            <button class="lang-btn" data-lang="pt" aria-label="Português">
+            <button type="button" class="lang-btn" data-lang="pt" aria-label="Português">
               <img src="https://flagcdn.com/w40/br.png" alt="" width="24" height="18" loading="lazy">
             </button>
             <span class="lang-divider" aria-hidden="true"></span>
-            <button class="lang-btn active" data-lang="en" aria-label="English">
+            <button type="button" class="lang-btn" data-lang="en" aria-label="English">
               <img src="https://flagcdn.com/w40/us.png" alt="" width="24" height="18" loading="lazy">
             </button>
           </div>
@@ -199,7 +198,7 @@
       <section class="about-section">
         <div class="about-section__content about-values__intro" data-i18n-html="about.valuesIntro" style="margin-bottom: var(--space-8);"></div>
         <h2 class="about-section__title" data-i18n="about.valuesTitle">Our Values</h2>
-        <p class="about-values__tagline" data-i18n="about.valuesTagline">Valor • Confiança • Excelência</p>
+        <p class="about-values__tagline" data-i18n="about.valuesTagline">Craftsmanship • Integrity • Client Experience</p>
         <div class="about-values">
           <div class="about-values__item">
             <h3 class="about-values__title" data-i18n="about.value1Title">Craftsmanship</h3>
@@ -210,16 +209,8 @@
             <p class="about-values__text" data-i18n-html="about.value2Text">Trust is the foundation of every successful project. We value honesty, transparency, and clear communication with our clients from the first consultation to the final walkthrough.</p>
           </div>
           <div class="about-values__item">
-            <h3 class="about-values__title" data-i18n="about.value3Title">Attention to Detail</h3>
-            <p class="about-values__text" data-i18n-html="about.value3Text">Luxury is defined by the details. From materials to finishes, we approach every aspect of the renovation process with care to create spaces that are both elegant and functional.</p>
-          </div>
-          <div class="about-values__item">
             <h3 class="about-values__title" data-i18n="about.value4Title">Client Experience</h3>
             <p class="about-values__text" data-i18n-html="about.value4Text">A renovation should elevate your home without bringing unnecessary stress. Our team is committed to delivering a smooth, organized, and respectful experience throughout the entire process.</p>
-          </div>
-          <div class="about-values__item">
-            <h3 class="about-values__title" data-i18n="about.value5Title">Long-Term Quality</h3>
-            <p class="about-values__text" data-i18n-html="about.value5Text">We build with durability in mind. Our goal is to create spaces that not only look exceptional today but continue to perform and impress for years to come.</p>
           </div>
         </div>
       </section>

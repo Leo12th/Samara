@@ -7,8 +7,7 @@
     (function() {
       var theme = localStorage.getItem('excellus-theme') || 'dark';
       document.documentElement.setAttribute('data-theme', theme);
-      var lang = localStorage.getItem('excellus-lang') || 'en';
-      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      document.documentElement.lang = 'en';
     })();
   </script>
   <meta name="description" content="Schedule your consultation - Excellus Remodeling. Luxury home transformations in Orlando.">
@@ -155,11 +154,11 @@
             <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
           </button>
           <div class="lang-switcher">
-            <button class="lang-btn" data-lang="pt" aria-label="Português">
+            <button type="button" class="lang-btn" data-lang="pt" aria-label="Português">
               <img src="https://flagcdn.com/w40/br.png" alt="" width="24" height="18" loading="lazy">
             </button>
             <span class="lang-divider" aria-hidden="true"></span>
-            <button class="lang-btn active" data-lang="en" aria-label="English">
+            <button type="button" class="lang-btn" data-lang="en" aria-label="English">
               <img src="https://flagcdn.com/w40/us.png" alt="" width="24" height="18" loading="lazy">
             </button>
           </div>

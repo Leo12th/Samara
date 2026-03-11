@@ -7,12 +7,11 @@
     (function() {
       var theme = localStorage.getItem('excellus-theme') || 'dark';
       document.documentElement.setAttribute('data-theme', theme);
-      var lang = localStorage.getItem('excellus-lang') || 'en';
-      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      document.documentElement.lang = 'en';
     })();
   </script>
-  <meta name="description" content="Excellus Remodeling - Construindo excelência desde a base. Reformas • Pisos • Acabamentos. Building excellence from the ground up.">
-  <title>Excellus Group | Reformas e Reparos de Luxo</title>
+  <meta name="description" content="Excellus Remodeling - Luxury Home Remodeling in Orlando. Building excellence from the ground up. Kitchens, bathrooms & whole-home renovations.">
+  <title>Excellus Group | Luxury Home Remodeling in Orlando</title>
   <link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png">
@@ -35,11 +34,11 @@
       <div class="header__menu">
         <nav class="nav">
           <ul class="nav__list">
-            <li><a href="#home" class="nav__link" data-i18n="nav.home">Início</a></li>
-            <li><a href="#services" class="nav__link" data-i18n="nav.services">Serviços</a></li>
-            <li><a href="#process" class="nav__link" data-i18n="nav.process">Nosso Processo</a></li>
-            <li><a href="#testimonials" class="nav__link" data-i18n="nav.testimonials">Depoimentos</a></li>
-            <li><a href="about.html" class="nav__link" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="#home" class="nav__link" data-i18n="nav.home">Home</a></li>
+            <li><a href="#services" class="nav__link" data-i18n="nav.services">Services</a></li>
+            <li><a href="#process" class="nav__link" data-i18n="nav.process">Our Process</a></li>
+            <li><a href="#testimonials" class="nav__link" data-i18n="nav.testimonials">Testimonials</a></li>
+            <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
           </ul>
         </nav>
         <div class="header__actions">
@@ -48,11 +47,11 @@
             <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
           </button>
           <div class="lang-switcher">
-            <button class="lang-btn" data-lang="pt" aria-label="Português" title="Português">
+            <button type="button" class="lang-btn" data-lang="pt" aria-label="Português" title="Português">
               <img src="https://flagcdn.com/w40/br.png" alt="" width="24" height="18" loading="lazy">
             </button>
             <span class="lang-divider" aria-hidden="true"></span>
-            <button class="lang-btn active" data-lang="en" aria-label="English" title="English">
+            <button type="button" class="lang-btn active" data-lang="en" aria-label="English" title="English">
               <img src="https://flagcdn.com/w40/us.png" alt="" width="24" height="18" loading="lazy">
             </button>
           </div>
@@ -80,8 +79,8 @@
       <div class="container hero__content">
         <span class="hero__badge animated-gradient" data-i18n="hero.badge">Luxury Home Remodeling</span>
         <h1 class="hero__title">
-          <span class="hero__title-line" data-i18n="hero.title1">Luxury Home Remodeling</span>
-          <span class="hero__title-line hero__title--gold" data-i18n="hero.title2">in Orlando</span>
+          <span class="hero__title-line" data-i18n="hero.title1">Luxury Home</span>
+          <span class="hero__title-line hero__title--gold" data-i18n="hero.title2">Remodeling in Orlando</span>
         </h1>
         <p class="hero__subtitle" data-i18n="hero.subtitle">
           Custom kitchen, bathroom and whole-home renovations for homeowners who expect exceptional craftsmanship.
@@ -121,8 +120,8 @@
     <section class="expertise fleur-pattern" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="section-label" data-i18n="expertise.label">Nossa Especialidade</span>
-          <h2 class="section-title gradient-text" data-i18n="expertise.title">Reformas de Luxo</h2>
+          <span class="section-label" data-i18n="expertise.label">Our Expertise</span>
+          <h2 class="section-title gradient-text" data-i18n="expertise.title">Luxury Renovations in Orlando</h2>
         </div>
         <div class="expertise__carousel">
           <button class="expertise__prev" type="button" aria-label="Anterior">‹</button>
@@ -131,27 +130,27 @@
             <div class="expertise__track">
             <article class="expertise-card card-3d gradient-border">
               <div class="expertise-card__image">
-                <img src="assets/done/gv1.PNG" alt="Projeto de reforma 1" loading="lazy">
+                <img src="assets/done/1.png" alt="Project 1" loading="lazy">
               </div>
             </article>
             <article class="expertise-card card-3d gradient-border">
               <div class="expertise-card__image">
-                <img src="assets/done/gv2.PNG" alt="Projeto de reforma 2" loading="lazy">
+                <img src="assets/done/2.png" alt="Project 2" loading="lazy">
               </div>
             </article>
             <article class="expertise-card card-3d gradient-border">
               <div class="expertise-card__image">
-                <img src="assets/done/gv3.PNG" alt="Projeto de reforma 3" loading="lazy">
+                <img src="assets/done/3.png" alt="Project 3" loading="lazy">
               </div>
             </article>
             <article class="expertise-card card-3d gradient-border">
               <div class="expertise-card__image">
-                <img src="assets/done/gv4.PNG" alt="Projeto de reforma 4" loading="lazy">
+                <img src="assets/done/4.png" alt="Project 4" loading="lazy">
               </div>
             </article>
             <article class="expertise-card card-3d gradient-border">
               <div class="expertise-card__image">
-                <img src="assets/done/gv5.PNG" alt="Projeto de reforma 5" loading="lazy">
+                <img src="assets/done/5.png" alt="Project 5" loading="lazy">
               </div>
             </article>
           </div>
@@ -165,7 +164,7 @@
     <section class="before-after fleur-pattern" id="transformations">
       <div class="container before-after__inner">
         <div class="before-after__content">
-          <h2 class="section-title gradient-text" data-i18n="beforeAfter.title">Redescubra seu espaço</h2>
+          <h2 class="section-title gradient-text" data-i18n="beforeAfter.title">Rediscover Your Space</h2>
           <div class="before-after__slider">
             <div class="ba-slider">
               <div class="ba-slider__before">
@@ -181,11 +180,11 @@
             </div>
           </div>
           <ul class="before-after__benefits">
-            <li data-i18n-html="beforeAfter.benefit1Html"><span class="check">✓</span> Layout completo e reconfiguração</li>
-            <li data-i18n-html="beforeAfter.benefit2Html"><span class="check">✓</span> Materiais de alta qualidade e tecnologia</li>
-            <li data-i18n-html="beforeAfter.benefit3Html"><span class="check">✓</span> Iluminação personalizada</li>
+            <li data-i18n-html="beforeAfter.benefit1Html"><span class="check">✓</span> Complete layout/reconfiguration</li>
+            <li data-i18n-html="beforeAfter.benefit2Html"><span class="check">✓</span> High-end materials & smart technology</li>
+            <li data-i18n-html="beforeAfter.benefit3Html"><span class="check">✓</span> Custom lighting design</li>
           </ul>
-          <a href="#gallery" class="link-arrow" data-i18n="beforeAfter.more">Ver mais transformações →</a>
+          <a href="#gallery" class="link-arrow" data-i18n="beforeAfter.more">See More Transformations →</a>
         </div>
       </div>
     </section>
@@ -223,63 +222,42 @@
     <section class="testimonials" id="testimonials">
       <div class="container">
         <div class="section-header">
-          <span class="section-label" data-i18n="testimonials.label">Histórias de Clientes</span>
-          <h2 class="section-title gradient-text" data-i18n="testimonials.title">O que Nossos Clientes Dizem</h2>
+          <span class="section-label" data-i18n="testimonials.label">Client Stories</span>
+          <h2 class="section-title gradient-text" data-i18n="testimonials.title">What Our Clients Say</h2>
         </div>
         <div class="testimonials__slider">
           <div class="testimonials__track">
-            <article class="testimonial-card">
+            <!-- Placeholder testimonials until Google Reviews are available. When you add a Google Reviews widget (e.g. Elfsight, EmbedReviews, Trustindex), add its script and the widget will render inside #google-reviews-widget below. -->
+            <article class="testimonial-card testimonial-card--placeholder">
               <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote1">"A Excellus transformou nossa cozinha em um espaço dos sonhos. Profissionalismo e qualidade excepcionais."</blockquote>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote1">"Excellus transformed our kitchen into a dream space. Exceptional professionalism and quality."</blockquote>
               <div class="testimonial-card__author">
                 <img src="https://i.pravatar.cc/80?img=1" alt="Maria Silva" loading="lazy">
                 <div>
                   <strong>Maria Silva</strong>
-                  <span data-i18n="testimonials.author1Role">Proprietária</span>
+                  <span data-i18n="testimonials.author1Role">Homeowner</span>
                 </div>
               </div>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card testimonial-card--placeholder">
               <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote2">"O banheiro ficou incrível. Cada detalhe foi pensado. Recomendo de olhos fechados."</blockquote>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote2">"The bathroom turned out incredible. Every detail was thought through. I recommend wholeheartedly."</blockquote>
               <div class="testimonial-card__author">
                 <img src="https://i.pravatar.cc/80?img=12" alt="João Santos" loading="lazy">
                 <div>
                   <strong>João Santos</strong>
-                  <span data-i18n="testimonials.author2Role">Arquiteto</span>
+                  <span data-i18n="testimonials.author2Role">Architect</span>
                 </div>
               </div>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card testimonial-card--placeholder">
               <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote3">"Reforma completa da casa. Prazo cumprido, orçamento respeitado. Excelência em tudo."</blockquote>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote3">"Complete home renovation. Deadline met, budget respected. Excellence in everything."</blockquote>
               <div class="testimonial-card__author">
                 <img src="https://i.pravatar.cc/80?img=5" alt="Ana Costa" loading="lazy">
                 <div>
                   <strong>Ana Costa</strong>
-                  <span data-i18n="testimonials.author3Role">Designer de Interiores</span>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote4">"Atendimento impecável do início ao fim. Nossa suíte ficou digna de hotel cinco estrelas."</blockquote>
-              <div class="testimonial-card__author">
-                <img src="https://i.pravatar.cc/80?img=9" alt="Carla Mendes" loading="lazy">
-                <div>
-                  <strong>Carla Mendes</strong>
-                  <span data-i18n="testimonials.author4Role">Empresária</span>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-card__stars">★★★★★</div>
-              <blockquote class="testimonial-card__quote" data-i18n="testimonials.quote5">"A área gourmet que sempre sonhamos. Qualidade dos materiais e acabamento perfeito."</blockquote>
-              <div class="testimonial-card__author">
-                <img src="https://i.pravatar.cc/80?img=20" alt="Fernanda Lima" loading="lazy">
-                <div>
-                  <strong>Fernanda Lima</strong>
-                  <span data-i18n="testimonials.author5Role">Proprietária</span>
+                  <span data-i18n="testimonials.author3Role">Interior Designer</span>
                 </div>
               </div>
             </article>
@@ -289,6 +267,8 @@
             <button class="testimonials__next" data-i18n-attr="aria-label" data-i18n-attr-key="lightbox.next">›</button>
           </div>
         </div>
+        <!-- Google Reviews: add widget script in head/body when ready (Elfsight, EmbedReviews, Trustindex). Use id="google-reviews-widget" as target. Hide .testimonial-card--placeholder via CSS when you have enough reviews. -->
+        <div id="google-reviews-widget" class="google-reviews-widget" aria-label="Google Reviews"></div>
       </div>
     </section>
 
@@ -296,8 +276,8 @@
     <section class="gallery" id="gallery">
       <div class="container">
         <div class="section-header">
-          <span class="section-label" data-i18n="gallery.label">Portfólio</span>
-          <h2 class="section-title gradient-text" data-i18n="gallery.title">Projetos Concluídos</h2>
+          <span class="section-label" data-i18n="gallery.label">Portfolio</span>
+          <h2 class="section-title gradient-text" data-i18n="gallery.title">Completed Projects</h2>
         </div>
         <div class="gallery__grid">
           <article class="gallery__item gallery__card card-3d gradient-border" data-category="residential exteriors">
@@ -306,8 +286,8 @@
             </div>
             <div class="gallery__card-content">
               <h3 class="gallery__card-title">Windermere Gourmet Area</h3>
-              <p class="gallery__card-meta"><span>Duração:</span> 6 semanas</p>
-              <p class="gallery__card-meta"><span>Escopo:</span> outdoor kitchen + flooring</p>
+              <p class="gallery__card-meta"><span>Duration:</span> 6 weeks</p>
+              <p class="gallery__card-meta"><span>Scope:</span> outdoor kitchen + flooring</p>
             </div>
           </article>
           <article class="gallery__item gallery__card card-3d gradient-border" data-category="residential">
@@ -316,8 +296,8 @@
             </div>
             <div class="gallery__card-content">
               <h3 class="gallery__card-title">Lake Nona Full Home Remodel</h3>
-              <p class="gallery__card-meta"><span>Duração:</span> 10 semanas</p>
-              <p class="gallery__card-meta"><span>Escopo:</span> full home renovation + flooring</p>
+              <p class="gallery__card-meta"><span>Duration:</span> 10 weeks</p>
+              <p class="gallery__card-meta"><span>Scope:</span> full home renovation + flooring</p>
             </div>
           </article>
           <article class="gallery__item gallery__card card-3d gradient-border" data-category="residential interiors">
@@ -326,8 +306,8 @@
             </div>
             <div class="gallery__card-content">
               <h3 class="gallery__card-title">Downtown Kitchen Remodel</h3>
-              <p class="gallery__card-meta"><span>Duração:</span> 8 semanas</p>
-              <p class="gallery__card-meta"><span>Escopo:</span> kitchen renovation</p>
+              <p class="gallery__card-meta"><span>Duration:</span> 8 weeks</p>
+              <p class="gallery__card-meta"><span>Scope:</span> kitchen renovation</p>
             </div>
           </article>
           <article class="gallery__item gallery__card card-3d gradient-border" data-category="residential interiors">
@@ -336,8 +316,8 @@
             </div>
             <div class="gallery__card-content">
               <h3 class="gallery__card-title">Dr. Phillips Master Bathroom</h3>
-              <p class="gallery__card-meta"><span>Duração:</span> 3 semanas</p>
-              <p class="gallery__card-meta"><span>Escopo:</span> master bathroom renovation</p>
+              <p class="gallery__card-meta"><span>Duration:</span> 3 weeks</p>
+              <p class="gallery__card-meta"><span>Scope:</span> master bathroom renovation</p>
             </div>
           </article>
         </div>
@@ -348,8 +328,8 @@
     <section class="map-section" id="map">
       <div class="container">
         <div class="section-header">
-          <span class="section-label" data-i18n="map.label">Localização</span>
-          <h2 class="section-title gradient-text" data-i18n="map.title">Onde Estamos</h2>
+          <span class="section-label" data-i18n="map.label">Location</span>
+          <h2 class="section-title gradient-text" data-i18n="map.title">Where We Are</h2>
         </div>
         <div class="map-wrapper">
           <iframe
@@ -364,7 +344,7 @@
             <div class="map-info">
               <h3>Excellus Remodeling</h3>
               <p>Orlando, FL</p>
-              <a href="https://www.google.com/maps/dir//Orlando,+FL" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm" data-i18n="map.directions">Como chegar</a>
+              <a href="https://www.google.com/maps/dir//Orlando,+FL" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm" data-i18n="map.directions">Get directions</a>
             </div>
           </div>
         </div>
@@ -392,8 +372,8 @@
           </a>
           <div class="footer__desc">
             <p class="footer__brand" data-i18n="footer.brand">Excellus Remodeling</p>
-            <p class="footer__tagline" data-i18n="footer.tagline">Construindo excelência desde a base.</p>
-            <p class="footer__services" data-i18n="footer.services">Reformas • Pisos • Acabamentos</p>
+            <p class="footer__tagline" data-i18n="footer.tagline">Building excellence from the ground up.</p>
+            <p class="footer__services" data-i18n="footer.services">Remodeling • Flooring • Finishing</p>
           </div>
           <div class="footer__social">
             <a href="#" aria-label="Facebook" class="footer__social-shield footer__social-link">
@@ -415,7 +395,7 @@
           </div>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer.quickLinks">Links Rápidos</h4>
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
           <ul>
             <li><a href="#home" data-i18n="footer.navHome">Home</a></li>
             <li><a href="#services" data-i18n="footer.navServices">Services</a></li>
@@ -426,7 +406,7 @@
           </ul>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="footer.contact">Contato</h4>
+          <h4 data-i18n="footer.contact">Contact</h4>
           <p><a href="mailto:Remodeling@excellusgroup.com">Remodeling@excellusgroup.com</a></p>
           <p><a href="tel:+14074702989">+1 (407) 470-2989</a></p>
           <p>Orlando, FL</p>
@@ -434,13 +414,13 @@
         <div class="footer__col">
           <h4 data-i18n="footer.newsletter">Newsletter</h4>
           <form class="newsletter">
-            <input type="email" data-i18n-placeholder="footer.placeholder" placeholder="Seu e-mail" required>
-            <button type="submit" class="btn btn--primary" data-i18n="footer.subscribe">Inscrever</button>
+            <input type="email" data-i18n-placeholder="footer.placeholder" placeholder="Your email" required>
+            <button type="submit" class="btn btn--primary" data-i18n="footer.subscribe">Subscribe</button>
           </form>
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copyright" data-i18n="footer.rights">© 2025 Excellus Group. Todos os direitos reservados.</p>
+        <p class="footer__copyright" data-i18n="footer.rights">© 2025 Excellus Group. All rights reserved.</p>
         <div class="footer__credits">
           <img src="assets/by-bruna-pazuch.png" alt="by Bruna Pazuch" class="footer__credit-img footer__credit-img--dark">
           <img src="assets/by-samara-pagnon.png" alt="by Bruna Pazuch" class="footer__credit-img footer__credit-img--light">
@@ -450,11 +430,11 @@
   </footer>
 
   <!-- Balão WhatsApp - altere 5511999999999 pelo número com DDI (ex: 5511999999999 Brasil, 14075551234 EUA) -->
-  <a href="https://wa.me/14074702989?text=Hello!%20I%20would%20like%20to%20schedule%20a%20consultation." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chamar no WhatsApp">
+  <a href="https://wa.me/14074702989?text=Hello!%20I%20would%20like%20to%20schedule%20a%20consultation." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Call on WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
-    <span class="whatsapp-float__tooltip" data-i18n="whatsapp">Chamar no WhatsApp</span>
+    <span class="whatsapp-float__tooltip" data-i18n="whatsapp">Call on WhatsApp</span>
   </a>
 
   <!-- Lightbox Galeria -->

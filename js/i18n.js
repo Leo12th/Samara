@@ -158,7 +158,7 @@ const translations = {
       team4Name: 'Maria Garcia',
       team4Role: 'Gerente de Operações',
       valuesTitle: 'Nossos Valores',
-      valuesTagline: 'Valor • Confiança • Excelência',
+      valuesTagline: 'Artesanato • Integridade • Experiência do Cliente',
       valuesIntro: '<p>Na Excellus Remodeling, acreditamos que uma reforma de sucesso vai muito além da construção. Trata-se de <strong>confiança</strong>, <strong>precisão</strong> e compromisso com a <strong>excelência</strong> em cada etapa do projeto.</p>',
       value1Title: 'Artesanato',
       value1Text: 'Acreditamos que espaços excepcionais são construídos com habilidade, precisão e atenção aos detalhes. Cada projeto reflete nosso compromisso com <strong>qualidade duradoura</strong>.',
@@ -214,10 +214,10 @@ const translations = {
     hero: {
       bgAria: 'Classic architecture - pillars of excellence',
       badge: 'Luxury Home Remodeling',
-      title1: 'Luxury Home Remodeling',
-      title2: 'in Orlando',
+      title1: 'Luxury Home',
+      title2: 'Remodeling in Orlando',
       subtitle:
-        'Custom kitchen, bathroom and whole-home renovations for homeowners who expect exceptional craftsmanship.',
+        'Custom kitchen, bathroom and whole-home renovations in Orlando for homeowners who expect exceptional craftsmanship.',
       portfolio: 'View Our Projects',
       process: 'Our Process',
       btnConsult: 'Schedule Consultation',
@@ -235,7 +235,7 @@ const translations = {
     },
     expertise: {
       label: 'Our Expertise',
-      title: 'Luxury Renovations',
+      title: 'Luxury Renovations in Orlando',
       carouselAria: 'Carousel navigation',
       kitchens: "Chef's Kitchens",
       bathrooms: 'Spa Bathrooms',
@@ -280,7 +280,6 @@ const translations = {
     gallery: {
       label: 'Portfolio',
       title: 'Completed Projects',
-<<<<<<< HEAD
       duration: 'Duration',
       scope: 'Scope',
       weeks: 'weeks',
@@ -291,23 +290,9 @@ const translations = {
         { title: 'Dr. Phillips Master Bathroom', scope: 'master bathroom renovation' },
       ],
       projectDurations: [6, 10, 8, 3],
-=======
-      budget: 'Budget',
-      duration: 'Duration',
-      weeks: 'weeks',
-      scope: 'Scope',
-      livingRoom: 'Living Room',
-      kitchen: 'Kitchen',
-      bathroom: 'Bathroom',
-      suite: 'Suite',
-      gourmet: 'Gourmet Area',
-      office: 'Office',
-      store: 'Commercial Space',
-      facade: 'Facade',
->>>>>>> da0621564364c05a76e41f9c2ff0c74c9399d7ca
     },
     contact: {
-      title: 'Ready to transform your home?',
+      title: 'Ready to transform your home in Orlando?',
       text: 'Schedule your consultation with our team today.',
     },
     map: {
@@ -362,7 +347,7 @@ const translations = {
       team4Name: 'Maria Garcia',
       team4Role: 'Operations Manager',
       valuesTitle: 'Our Values',
-      valuesTagline: 'Value • Trust • Excellence',
+      valuesTagline: 'Craftsmanship • Integrity • Client Experience',
       valuesIntro: '<p>At Excellus Remodeling, we believe that a successful renovation goes far beyond construction. It is about <strong>trust</strong>, <strong>precision</strong>, and a commitment to <strong>excellence</strong> in every stage of the project.</p>',
       value1Title: 'Craftsmanship',
       value1Text: 'We believe that exceptional spaces are built through skill, precision, and attention to detail. Every project reflects our commitment to <strong>lasting quality</strong>.',
@@ -385,8 +370,8 @@ const translations = {
       cert4Desc: 'Google Reviews',
     },
     meta: {
-      title: 'Excellus Group | Luxury Home Remodeling',
-      description: 'Excellus Remodeling - Building excellence from the ground up. Remodeling • Flooring • Finishing.',
+      title: 'Excellus Group | Luxury Home Remodeling in Orlando',
+      description: 'Excellus Remodeling - Luxury Home Remodeling in Orlando. Building excellence from the ground up. Remodeling • Flooring • Finishing.',
       formTitle: 'Schedule Consultation | Excellus Group',
       formDesc: 'Schedule your consultation - Excellus Remodeling. Luxury home transformations in Orlando.',
       aboutTitle: 'About Us | Excellus Group',
@@ -414,15 +399,19 @@ const translations = {
   },
 };
 
-let currentLang = localStorage.getItem('excellus-lang') || 'en';
+// Default: English only, no persistence (always opens in English)
+let currentLang = 'en';
 window.excellusTranslations = translations;
+window.excellusCurrentLang = currentLang;
 
 function setLanguage(lang) {
   if (!translations[lang]) return;
   currentLang = lang;
-  localStorage.setItem('excellus-lang', lang);
+  window.excellusCurrentLang = lang;
+  // No localStorage - language is not persisted between sessions
 
   const t = translations[lang];
+  try {
 
   // [data-i18n] - texto
   document.querySelectorAll('[data-i18n]').forEach((el) => {
@@ -453,8 +442,15 @@ function setLanguage(lang) {
     if (val) el.setAttribute('title', val);
   });
 
-<<<<<<< HEAD
-  // Before After
+  // [data-i18n-placeholder] - placeholder
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const val = key.split('.').reduce((o, k) => o?.[k], t);
+    if (val) el.setAttribute('placeholder', val);
+  });
+
+  // Before After (sem data-i18n nos benefits)
+  if (t.beforeAfter) {
   const baTitle = document.querySelector('.before-after .section-title');
   if (baTitle) baTitle.textContent = t.beforeAfter.title;
   const benefits = document.querySelectorAll('.before-after__benefits li');
@@ -464,34 +460,10 @@ function setLanguage(lang) {
     benefits[2].innerHTML = `<span class="check">✓</span> ${t.beforeAfter.benefit3}`;
   }
   document.querySelector('.link-arrow')?.replaceChildren(t.beforeAfter.more);
-
-  // Why Choose
-  document.querySelector('.why-choose .section-title')?.replaceChildren(t.whyChoose.title);
-  const whyCards = document.querySelectorAll('.why-card');
-  if (whyCards.length >= 3) {
-    whyCards[0].querySelector('.why-card__title').textContent = t.whyChoose.craft.title;
-    whyCards[0].querySelector('.why-card__text').textContent = t.whyChoose.craft.text;
-    whyCards[1].querySelector('.why-card__title').textContent = t.whyChoose.price.title;
-    whyCards[1].querySelector('.why-card__text').textContent = t.whyChoose.price.text;
-    whyCards[2].querySelector('.why-card__title').textContent = t.whyChoose.design.title;
-    whyCards[2].querySelector('.why-card__text').textContent = t.whyChoose.design.text;
   }
 
-  // Testimonials
-  const testLabels = document.querySelectorAll('.testimonials .section-label');
-  if (testLabels.length) testLabels[0].textContent = t.testimonials.label;
-  const testTitles = document.querySelectorAll('.testimonials .section-title');
-  if (testTitles.length) testTitles[0].textContent = t.testimonials.title;
-  const quotes = document.querySelectorAll('.testimonial-card__quote');
-  if (quotes.length >= 5) {
-    quotes[0].textContent = t.testimonials.quote1;
-    quotes[1].textContent = t.testimonials.quote2;
-    quotes[2].textContent = t.testimonials.quote3;
-    quotes[3].textContent = t.testimonials.quote4;
-    quotes[4].textContent = t.testimonials.quote5;
-  }
-
-  // Gallery
+  // Gallery (cards com estrutura dinâmica)
+  if (t.gallery) {
   const galleryLabels = document.querySelectorAll('.gallery .section-label');
   if (galleryLabels.length) galleryLabels[0].textContent = t.gallery.label;
   const galleryTitles = document.querySelectorAll('.gallery .section-title');
@@ -508,46 +480,35 @@ function setLanguage(lang) {
       metaEls[1].innerHTML = `<span>${t.gallery.scope}:</span> ${projects[i].scope}`;
     }
   });
+  }
 
-  // Contact
-  document.querySelector('.contact .section-title')?.replaceChildren(t.contact.title);
-  document.querySelector('.contact__text')?.replaceChildren(t.contact.text);
-  document.querySelector('.contact .btn--primary')?.replaceChildren(t.cta);
-
-  // Footer
+  // Contact e Footer (garantir aplicação)
+  if (t.contact) {
+    document.querySelector('.contact .section-title')?.replaceChildren(t.contact.title);
+    document.querySelector('.contact__text')?.replaceChildren(t.contact.text);
+  }
+  const contactCtaBtn = document.querySelector('.contact__cta');
+  if (contactCtaBtn && t.cta) contactCtaBtn.textContent = t.cta;
+  if (t.footer) {
   const footerBrand = document.querySelector('.footer__brand');
   const footerTagline = document.querySelector('.footer__tagline');
   const footerServices = document.querySelector('.footer__services');
   if (footerBrand) footerBrand.textContent = t.footer.brand;
   if (footerTagline) footerTagline.textContent = t.footer.tagline;
   if (footerServices) footerServices.textContent = t.footer.services;
-  const footerCols = document.querySelectorAll('.footer__col h4');
-  if (footerCols.length >= 4) {
-    footerCols[1].textContent = t.footer.quickLinks;
-    footerCols[2].textContent = t.footer.contact;
-    footerCols[3].textContent = t.footer.newsletter;
-  }
-  const footerNavLinks = document.querySelectorAll('.footer__col ul li a');
-  if (footerNavLinks.length >= 5) {
-    footerNavLinks[0].textContent = t.footer.navHome;
-    footerNavLinks[1].textContent = t.footer.navServices;
-    footerNavLinks[2].textContent = t.footer.navProcess;
-    footerNavLinks[3].textContent = t.footer.navPortfolio;
-    footerNavLinks[4].textContent = t.footer.navRequestQuote;
-  }
+  const footerCol2Links = document.querySelectorAll('.footer__col:nth-child(2) ul li a');
+  const navKeys = ['navHome', 'navServices', 'navProcess', 'navPortfolio', 'navAbout', 'navRequestQuote'];
+  footerCol2Links.forEach((link, i) => {
+    const val = t.footer?.[navKeys[i]];
+    if (val) link.textContent = val;
+  });
   const newsletterInput = document.querySelector('.newsletter input');
   if (newsletterInput) newsletterInput.placeholder = t.footer.placeholder;
   const subscribeBtn = document.querySelector('.newsletter .btn');
   if (subscribeBtn) subscribeBtn.textContent = t.footer.subscribe;
-  document.querySelector('.footer__bottom p')?.replaceChildren(t.footer.rights);
-=======
-  // [data-i18n-placeholder] - placeholder
-  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    const val = key.split('.').reduce((o, k) => o?.[k], t);
-    if (val) el.setAttribute('placeholder', val);
-  });
->>>>>>> da0621564364c05a76e41f9c2ff0c74c9399d7ca
+  const footerRights = document.querySelector('.footer__copyright, .footer__bottom p');
+  if (footerRights) footerRights.textContent = t.footer.rights;
+  }
 
   // WhatsApp
   const waText = lang === 'pt' ? 'Olá! Gostaria de agendar uma consultoria.' : 'Hello! I would like to schedule a consultation.';
@@ -601,13 +562,20 @@ function setLanguage(lang) {
   if (metaTitle) document.title = metaTitle;
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc && metaDescVal) metaDesc.setAttribute('content', metaDescVal);
+  } catch (err) {
+    console.warn('i18n setLanguage:', err);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.lang-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
+  // Event delegation: funciona mesmo ao clicar na imagem dentro do botão
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (btn && btn.dataset.lang) {
+      e.preventDefault();
+      e.stopPropagation();
       setLanguage(btn.dataset.lang);
-    });
+    }
   });
   setLanguage(currentLang);
 });

@@ -414,6 +414,9 @@ html[data-theme="light"] .hero__blob {
   position: relative;
   z-index: 2;
   max-width: 700px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero__badge {
@@ -445,11 +448,14 @@ html[data-theme="light"] .hero__blob {
   color: var(--color-text-secondary);
   margin-bottom: var(--space-6);
   max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero__cta {
   display: flex;
   gap: var(--space-4);
+  justify-content: center;
 }
 
 /* ========== STATS ========== */
@@ -552,10 +558,12 @@ html[data-theme="light"] .hero__blob {
   max-width: 70%;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 var(--space-4);
 }
 
 .expertise__viewport {
   overflow: hidden;
+  border-radius: var(--radius-lg);
 }
 
 .expertise__prev,
@@ -563,27 +571,28 @@ html[data-theme="light"] .hero__blob {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--color-bg-tertiary);
   border: 1px solid var(--color-gold-muted);
   color: var(--color-gold);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 10;
   transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
 }
 
 .expertise__prev {
-  left: -24px;
+  left: var(--space-2);
 }
 
 .expertise__next {
-  right: -24px;
+  right: var(--space-2);
 }
 
 .expertise__prev:hover,
@@ -655,6 +664,7 @@ html[data-theme="light"] .hero__blob {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform var(--transition-slow);
 }
 
@@ -977,6 +987,14 @@ html[data-theme="light"] .hero__blob {
 .testimonials__next:hover {
   background: var(--color-gold);
   color: var(--color-bg-primary);
+}
+
+/* Google Reviews widget container - hide when empty; shows when widget injects content */
+.google-reviews-widget:empty {
+  display: none;
+}
+.google-reviews-widget:not(:empty) {
+  margin-top: var(--space-8);
 }
 
 /* ========== GALLERY ========== */
