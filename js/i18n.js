@@ -27,7 +27,7 @@ const translations = {
       btnProjects: 'Ver Projetos',
     },
     stats: {
-      stat1: '500+',
+      stat1: '100+',
       stat1Label: 'Projetos Concluídos',
       stat2: '5+',
       stat2Label: 'Anos de Experiência',
@@ -224,7 +224,7 @@ const translations = {
       btnProjects: 'View Our Projects',
     },
     stats: {
-      stat1: '500+',
+      stat1: '100+',
       stat1Label: 'Projects Completed',
       stat2: '5+',
       stat2Label: 'Years Experience',
